@@ -29,6 +29,9 @@ export default class Home extends React.Component {
 
   onPress = () => {
     console.log("onPress")
+    const users = qss.docs.filter(doc => doc.exists)
+    console.log("Matching users: ", users)
+    this.setState({users})
   }
 
   render() {

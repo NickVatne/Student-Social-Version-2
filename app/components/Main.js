@@ -9,7 +9,7 @@ export default class Main extends React.Component {
   state = { userDocs: [] }
 
   async componentDidMount() {
-     firebase.firestore().collection("users").onSnapshot(this.onSnapshot, this.onQueryError)
+    //firebase.firestore().collection("users").onSnapshot(this.onSnapshot, this.onQueryError)
   }
   componentWillUnmount() {
 

@@ -5,8 +5,7 @@ import { StyleSheet, TouchableOpacity, Text, Dimensions } from "react-native"
 export default ({ onPress }) => (
   <TouchableOpacity
     style={styles.touchable}
-    onPress={onPress} 
-  >
+    onPress={onPress}>
     <Text style={styles.text}>Find Friends</Text>
   </TouchableOpacity>
 )

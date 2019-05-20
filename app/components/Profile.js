@@ -1,8 +1,8 @@
 
 import React from "react"
-import { StyleSheet, SafeAreaView, Text, Dimensions } from "react-native"
+import {StyleSheet, SafeAreaView, Text, Dimensions, TouchableOpacity} from "react-native"
 
-export default class Profile extends React.Component {
+export default class Profile extends React.Component<Props> {
 
   componentDidMount() {
 
@@ -11,8 +11,11 @@ export default class Profile extends React.Component {
   render() {
     return (
       <SafeAreaView style={styles.container}>
-        <Text>Profile</Text>
-      </SafeAreaView>
+        <TouchableOpacity style={styles.btn}>
+          <Text>Login</Text>
+        </TouchableOpacity>
+
+        </SafeAreaView>
     )
   }
 }
@@ -22,5 +25,15 @@ const styles = StyleSheet.create({
     flex: 1,
     width: Dimensions.get("window").width,
     backgroundColor: "mistyrose",
+  },
+  text: {
+    textAlign: "center",
+    height: 20
+  },
+  btn: {
+    textAlign: "center",
+    height: 20,
+    position: "relative",
+
   }
-})
+});
