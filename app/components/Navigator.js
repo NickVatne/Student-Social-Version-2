@@ -2,7 +2,8 @@ import {createBottomTabNavigator, createAppContainer} from "react-navigation"
 
 import Home from "@components/Home"
 import Profile from "@components/Profile"
-import Login from "./Login";
+import Login from "./Login"
+import Chat from "./Chat"
 
 const nav = createBottomTabNavigator({
         Home: {
@@ -24,6 +25,12 @@ const nav = createBottomTabNavigator({
                 headerTitle: "Login",
             }),
         },
+    Chat: {
+            screen: Chat,
+        navigationOptions: ({navigation}) => ({
+            headerTitle: "Chat"
+        })
+    }
     },
 
     {

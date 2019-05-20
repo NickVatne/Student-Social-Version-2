@@ -1,13 +1,15 @@
 
 import React from "react"
-import { StyleSheet, View, Text, Dimensions } from "react-native"
+import { StyleSheet, View, Text, Dimensions, SafeAreaView } from "react-native"
 
 export default ({ doc }) => {
   const data = doc.data()
   
   return (
     <View style={styles.container}>
-      <Text>{data.timestamp.toLocaleString("no")}</Text>
+      <Text>{data.timestamp.toLocaleString("NO")}</Text>
+      <Text>-------------------------------------</Text>
+      <Text>This is a post done by a post</Text>
     </View>
   )
 }
