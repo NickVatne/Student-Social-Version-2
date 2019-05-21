@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
 import {
-    Appregistry,StyleSheet,Text,View,Navigator,Image,TextInput,TouchableOpacity,AsyncStorage, SafeAreaView
+    Appregistry,StyleSheet,Text,View,Navigator,ImageBackground,TextInput,TouchableOpacity,AsyncStorage, SafeAreaView
 } from 'react-native';
 
 export default class Login extends Component {
     render() {
         return (
             <SafeAreaView style={styles.container}>
-                <Image source={require('../imgs/background.jpg')} style={styles.backgroundImage}>
+                <ImageBackground source={require('../imgs/background.jpg')} style={styles.backgroundImage}>
                     <View style={styles.content}>
                         <Text style={styles.logo}>- HALLOOO -</Text>
 
@@ -30,7 +30,7 @@ export default class Login extends Component {
                         </TouchableOpacity>
 
                     </View>
-                </Image>
+                </ImageBackground>
             </SafeAreaView>
         );
     }
@@ -43,7 +43,8 @@ const styles = StyleSheet.create({
     backgroundImage: {
         flex: 1,
         alignSelf: 'stretch',
-        width: null,
+        width: '100%',
+        height: '100%',
         justifyContent: 'center',
     },
     content: {
