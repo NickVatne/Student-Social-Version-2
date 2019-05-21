@@ -12,6 +12,7 @@ export default class Login extends Component {
                         <Text style={styles.logo}>- HALLOOO -</Text>
 
                         <View style ={styles.inputContainer}>
+
                             <TextInput underlineColorAndroid='transparent' style={styles.input}
                                        placeholder='username'>
                                 Nicolai
@@ -21,7 +22,6 @@ export default class Login extends Component {
                                        placeholder='password'>
                                 **********
                             </TextInput>
-
 
                         </View>
 
@@ -59,6 +59,7 @@ const styles = StyleSheet.create({
         textShadowColor: '#252525',
         textShadowOffset: {width: 2, height: 2},
         textShadowRadius: 15,
+        marginBottom: 20,
     },
     inputContainer: {
         margin: 20,
@@ -66,7 +67,9 @@ const styles = StyleSheet.create({
         padding: 20,
         paddingBottom: 10,
         alignSelf: 'stretch',
-        borderColor: '#FFF',
+        borderColor: '#fff',
+        borderWidth: 1,
+        backgroundColor: 'rgba(255,255,255,0.2)',
     },
     input: {
         fontSize: 16,
