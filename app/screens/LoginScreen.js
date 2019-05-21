@@ -3,7 +3,7 @@ import {
     Appregistry,StyleSheet,Text,View,Navigator,ImageBackground,TextInput,TouchableOpacity,AsyncStorage, SafeAreaView
 } from 'react-native';
 
-export default class Login extends Component {
+export default class LoginScreen extends Component {
     render() {
         return (
             <SafeAreaView style={styles.container}>

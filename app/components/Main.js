@@ -3,10 +3,11 @@ import React from "react"
 
 import firebase from "@modules/Firebase"
 
-import Navigator from "./Navigator"
+import AppNavigator from '../navigation/AppNavigator'
+
 
 export default class Main extends React.Component {
-  state = { userDocs: [] }
+  state = { userDocs: [] };
 
   async componentDidMount() {
     //firebase.firestore().collection("users").onSnapshot(this.onSnapshot, this.onQueryError)
@@ -22,7 +23,7 @@ export default class Main extends React.Component {
   onQueryError = err => console.log(err)
 
   render() {
-    return <Navigator />
+    return <AppNavigator />
   }
 
 }

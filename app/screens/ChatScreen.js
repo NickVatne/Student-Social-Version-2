@@ -6,7 +6,7 @@ import {
     SafeAreaView
 } from 'react-native';
 
-export default class Chat extends Component {
+export default class ChatScreen extends Component {
 
     render() {
         return (

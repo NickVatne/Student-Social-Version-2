@@ -2,12 +2,12 @@
 import React from "react"
 import { StyleSheet, SafeAreaView, View, Dimensions, FlatList } from "react-native"
 
-import BigButton from "./BigButton"
+import BigButton from "../components/BigButton"
 import firebase from "@modules/Firebase"
 
-import EventItem from "./EventItem"
+import EventItem from "../components/EventItem"
 
-export default class Home extends React.Component {
+export default class HomeScreen extends React.Component {
   static renderSeparator = (sectionId, rowId) => <View style={styles.separator} key={rowId} />
   static keyExtractor = (item, index) => index.toString()
   static renderItem = ({ item }) => <EventItem doc={item} />
@@ -40,9 +40,9 @@ export default class Home extends React.Component {
         <BigButton onPress={this.onPress} />
         <FlatList style={styles.list}
           data={this.state.events}
-          renderItem={Home.renderItem}
-          ItemSeparatorComponent={Home.renderSeparator}
-          keyExtractor={Home.keyExtractor}
+          renderItem={HomeScreen.renderItem}
+          ItemSeparatorComponent={HomeScreen.renderSeparator}
+          keyExtractor={HomeScreen.keyExtractor}
         />
       </SafeAreaView>
     )
