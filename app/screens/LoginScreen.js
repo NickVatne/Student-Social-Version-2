@@ -9,7 +9,7 @@ export default class LoginScreen extends Component {
             <SafeAreaView style={styles.container}>
                 <ImageBackground source={require('../imgs/background.jpg')} style={styles.backgroundImage}>
                     <View style={styles.content}>
-                        <Text style={styles.logo}>- HALLOOO -</Text>
+                        <Text style={styles.logo}>- Login -</Text>
 
                         <View style ={styles.inputContainer}>
 

@@ -12,7 +12,11 @@ export default class HomeScreen extends React.Component {
   static keyExtractor = (item, index) => index.toString()
   static renderItem = ({ item }) => <EventItem doc={item} />
 
-  state = { events: [] }
+  state = {
+    events: [],
+    userDocs: []
+  }
+
 
   componentDidMount() {
     firebase.firestore().collection("events")
@@ -29,9 +33,9 @@ export default class HomeScreen extends React.Component {
 
   onPress = () => {
     console.log("onPress")
-    const users = qss.docs.filter(doc => doc.exists)
-    console.log("Matching users: ", users)
-    this.setState({users})
+    const userDocs = qss.docs.filter(doc => doc.exists)
+    console.log("Matching users: ", userDocs)
+    this.setState({userDocs})
   }
 
   render() {
@@ -54,7 +58,7 @@ const styles = StyleSheet.create({
     flex: 1,
     width: Dimensions.get("window").width,
     alignItems: "center",
-    backgroundColor: "silver"
+    backgroundColor: "black"
   },
 
   list: {

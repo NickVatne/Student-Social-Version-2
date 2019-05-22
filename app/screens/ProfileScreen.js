@@ -13,10 +13,15 @@ export default class ProfileScreen extends React.Component {
 
                 </View>
                 <View style={styles.body}>
-                    <TouchableOpacity style={styles.buttonContainer}>
+                    <TouchableOpacity
+                        style={styles.buttonContainer}
+                        onPress={() => this.props.navigation.navigate('ProfileScreen')}>
                         <Text>Edit my Profile</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.buttonContainer}>
+                    <TouchableOpacity
+                        style={styles.buttonContainer}
+                        onPress={()=> this.props.navigation.navigate('HomeScreen')}
+                    >
                         <Text>Edit my Preferences</Text>
                     </TouchableOpacity>
                 </View>

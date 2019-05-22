@@ -5194,6 +5194,11 @@ react-native-gesture-handler@^1.2.1:
     invariant "^2.2.2"
     prop-types "^15.5.10"
 
+react-native-ionicons@^4.5.6:
+  version "4.5.6"
+  resolved "https://registry.yarnpkg.com/react-native-ionicons/-/react-native-ionicons-4.5.6.tgz#048d116f6e58dbf12e067bf19959eb26a2d356ac"
+  integrity sha512-cInjQKIR/p48TKiIuEkqyXqSvfSsodz/pPU/s9efWgQxqKDROT2Ep0yjPfAw7GSAWnBzjT1g5319e5VntZ1wMg==
+
 react-native-safe-area-view@^0.14.1:
   version "0.14.4"
   resolved "https://registry.yarnpkg.com/react-native-safe-area-view/-/react-native-safe-area-view-0.14.4.tgz#1647fa74fd452cb8cee4f47bd08de3829451bf5d"
