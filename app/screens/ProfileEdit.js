@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {StyleSheet, Text, View, Image, TouchableOpacity, SafeAreaView} from 'react-native';
+import {StyleSheet, Text, View, Image, TouchableOpacity, SafeAreaView, Switch} from 'react-native';
 
 export default class ProfileEdit extends React.Component {
 
@@ -18,7 +18,22 @@ export default class ProfileEdit extends React.Component {
                     <View style={styles.middleHeader}>
                        <Text style={styles.generalText}>General</Text>
                     </View>
-
+                    <Text style={{color: "#000000", marginLeft: 20, marginTop: 20, fontSize: 16}}>Find Group</Text>
+                    <Text style={{color: "#000000", marginLeft: 20, marginTop: 20,}}>Size of find group</Text>
+                    <Text style={{color: "#2D4352", marginLeft: 280, marginTop: -18,}}>minimum 1</Text>
+                    <View style={{backgroundColor: "#d8d8d8", height: 2, marginTop: 20,}}></View>
+                    <Text style={{color: "#000000", marginLeft: 20, marginTop: 20, fontSize: 16}}>Interest</Text>
+                    <Text style={{color: "#000000", marginLeft: 20, marginTop: 20,}}>Edit:</Text>
+                    <Switch style={{ transform: [{ scaleX: .5 }, { scaleY: .5 }], fontSize: 16, marginLeft: 50, marginTop: -24, }}/>
+                    <View style={styles.middleHeader}>
+                        <Text style={styles.generalText}>Notification</Text>
+                    </View>
+                    <Text style={{color: "#000000", marginLeft: 20, marginTop: 20,}}>Push notification:</Text>
+                    <Switch style={{ transform: [{ scaleX: .5 }, { scaleY: .5 }], fontSize: 16, marginLeft: 150, marginTop: -24, }}/>
+                    <View style={{backgroundColor: "#d8d8d8", height: 2, marginTop: 10,}}></View>
+                    <Text style={{color: "#000000", marginLeft: 20, marginTop: 20,}}>SMS notification:</Text>
+                    <Switch style={{ transform: [{ scaleX: .5 }, { scaleY: .5 }], fontSize: 16, marginLeft: 150, marginTop: -24, }}
+                    value={true}/>
 
                 </View>
 
@@ -35,7 +50,7 @@ const styles = StyleSheet.create({
     },
     middleHeader: {
         backgroundColor: "#F8F8F8",
-        height: 60,
+        height: 50,
     },
     picture: {
         borderColor: "#2D4352",
@@ -70,8 +85,8 @@ const styles = StyleSheet.create({
     generalText: {
         fontSize: 16,
         color: "#000000",
-        marginTop: 20,
-        marginBottom: 20,
+        marginTop: 15,
+
         marginLeft: 20,
     },
 
