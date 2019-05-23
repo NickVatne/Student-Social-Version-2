@@ -7,20 +7,19 @@ export default class LoginScreen extends Component {
     render() {
         return (
             <SafeAreaView style={styles.container}>
-                <ImageBackground source={require('../imgs/background.jpg')} style={styles.backgroundImage}>
                     <View style={styles.content}>
                         <Text style={styles.logo}>- Login -</Text>
 
                         <View style ={styles.inputContainer}>
 
                             <TextInput underlineColorAndroid='transparent' style={styles.input}
-                                       placeholder='username'>
-                                Nicolai
+                                       placeholder='username'
+                                       placeholderTextColor='#ffffff'>
                             </TextInput>
 
                             <TextInput secureTextEntry={true} underlineColorAndroid='transparent' style={styles.input}
-                                       placeholder='password'>
-                                **********
+                                       placeholder='password'
+                                       placeholderTextColor='#ffffff'>
                             </TextInput>
 
                         </View>
@@ -30,7 +29,6 @@ export default class LoginScreen extends Component {
                         </TouchableOpacity>
 
                     </View>
-                </ImageBackground>
             </SafeAreaView>
         );
     }
@@ -38,6 +36,7 @@ export default class LoginScreen extends Component {
 
 const styles = StyleSheet.create({
     container: {
+        backgroundColor: '#455a64',
         flex: 1,
     },
     backgroundImage: {
