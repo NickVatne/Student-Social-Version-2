@@ -7,9 +7,11 @@ import HomeScreen from '../screens/HomeScreen';
 import LoginScreen from '../screens/LoginScreen';
 import ProfileScreen from '../screens/ProfileScreen';
 import ChatScreen from "../screens/ChatScreen";
+import ProfileEdit from "../screens/ProfileEdit";
 
 const HomeStack = createStackNavigator({
     Home: HomeScreen,
+
 });
 
 HomeStack.navigationOptions = {
@@ -42,6 +44,8 @@ LoginStack.navigationOptions = {
 
 const ProfileStack = createStackNavigator({
     Profile: ProfileScreen,
+    ProfileEdit: ProfileEdit,
+
 });
 
 ProfileStack.navigationOptions = {

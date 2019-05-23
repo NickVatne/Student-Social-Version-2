@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {StyleSheet, Text, View, Image, TouchableOpacity, SafeAreaView} from 'react-native';
+import {StyleSheet, Text, View, Image, TouchableOpacity, SafeAreaView, Button} from 'react-native';
 
 export default class ProfileScreen extends React.Component {
 
@@ -15,13 +15,12 @@ export default class ProfileScreen extends React.Component {
                 <View style={styles.body}>
                     <TouchableOpacity
                         style={styles.buttonContainer}
-                        onPress={() => this.props.navigation.navigate('ProfileScreen')}>
+                        onPress={()=> this.props.navigation.navigate('ProfileEdit')}>
                         <Text>Edit my Profile</Text>
                     </TouchableOpacity>
                     <TouchableOpacity
                         style={styles.buttonContainer}
-                        onPress={()=> this.props.navigation.navigate('HomeScreen')}
-                    >
+                        onPress={()=> this.props.navigation.navigate('HomeScreen')}>
                         <Text>Edit my Preferences</Text>
                     </TouchableOpacity>
                 </View>
@@ -32,7 +31,7 @@ export default class ProfileScreen extends React.Component {
 
 const styles = StyleSheet.create({
     header: {
-        backgroundColor: "#00BFFF",
+        backgroundColor: "#00bfff",
         height: 240,
     },
     avatar: {
