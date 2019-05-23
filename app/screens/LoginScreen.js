@@ -1,34 +1,34 @@
 import React, {Component} from 'react';
 import {
-    Appregistry,StyleSheet,Text,View,Navigator,ImageBackground,TextInput,TouchableOpacity,AsyncStorage, SafeAreaView
+    Appregistry,StyleSheet,Text,View,Navigator,TextInput,TouchableOpacity,AsyncStorage, SafeAreaView, Image
 } from 'react-native';
 
 export default class LoginScreen extends Component {
     render() {
         return (
             <SafeAreaView style={styles.container}>
-                    <View style={styles.content}>
-                        <Text style={styles.logo}>- Login -</Text>
+                <View style={styles.content}>
+                    <Image source={require('../imgs/profileEdit.png')} style={styles.logoImage}/>
+                    <Text style={styles.logo}>Student.Social</Text>
+                    <View style ={styles.inputContainer}>
 
-                        <View style ={styles.inputContainer}>
+                        <TextInput underlineColorAndroid='transparent' style={styles.input}
+                                   placeholder='username'>
+                            Nicolai
+                        </TextInput>
 
-                            <TextInput underlineColorAndroid='transparent' style={styles.input}
-                                       placeholder='username'
-                                       placeholderTextColor='#ffffff'>
-                            </TextInput>
-
-                            <TextInput secureTextEntry={true} underlineColorAndroid='transparent' style={styles.input}
-                                       placeholder='password'
-                                       placeholderTextColor='#ffffff'>
-                            </TextInput>
-
-                        </View>
-
-                        <TouchableOpacity onPress={this.login} style={styles.buttonContainer}>
-                            <Text style={styles.buttonText}>LOGIN</Text>
-                        </TouchableOpacity>
+                        <TextInput secureTextEntry={true} underlineColorAndroid='transparent' style={styles.input}
+                                   placeholder='password'>
+                            **********
+                        </TextInput>
 
                     </View>
+
+                    <TouchableOpacity onPress={this.login} style={styles.buttonContainer}>
+                        <Text style={styles.buttonText}>LOGIN</Text>
+                    </TouchableOpacity>
+
+                </View>
             </SafeAreaView>
         );
     }
@@ -36,57 +36,57 @@ export default class LoginScreen extends Component {
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: '#455a64',
         flex: 1,
-    },
-    backgroundImage: {
-        flex: 1,
-        alignSelf: 'stretch',
-        width: '100%',
-        height: '100%',
-        justifyContent: 'center',
     },
     content: {
         alignItems: 'center',
 
     },
+    logoImage:{
+        width: 50,
+        height: 50,
+    },
     logo: {
         color: 'white',
-        fontSize: 40,
-        fontStyle: 'italic',
+        fontSize: 39,
         fontWeight: 'bold',
         textShadowColor: '#252525',
         textShadowOffset: {width: 2, height: 2},
-        textShadowRadius: 15,
-        marginBottom: 20,
+        textShadowRadius: 14,
+        marginBottom: 19,
+        padding: 20,
     },
     inputContainer: {
-        margin: 20,
+        margin: 19,
         marginBottom: 0,
-        padding: 20,
-        paddingBottom: 10,
+        padding: 19,
+        paddingBottom: 11,
         alignSelf: 'stretch',
-        borderColor: '#fff',
+        borderColor: '#2d4452',
         borderWidth: 1,
-        backgroundColor: 'rgba(255,255,255,0.2)',
+        backgroundColor: 'rgb(255,255,255)',
+        borderBottomWidth: 1
     },
     input: {
-        fontSize: 16,
-        height: 40,
-        padding: 10,
-        marginBottom: 10,
+        fontSize: 15,
+        height: 39,
+        padding: 11,
+        marginBottom: 30,
+        borderBottomWidth: 1
     },
     buttonContainer: {
         alignSelf: 'stretch',
-        margin: 20,
-        padding: 20,
+        margin: 21,
+        padding: 21,
         borderWidth: 1,
-        borderColor: '#FFF',
-        backgroundColor: 'rgba(255,255,255,0.6)',
+        borderColor: '#2d4452',
+        backgroundColor: 'rgb(45,68,82)',
+        borderRadius: 30
     },
     buttonText: {
-        fontSize: 16,
+        fontSize: 17,
         fontWeight: 'bold',
-        textAlign: 'center'
+        textAlign: 'center',
+        color:'white'
     }
 });
