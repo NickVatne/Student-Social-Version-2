@@ -11,7 +11,7 @@ export default class ProfileScreen extends React.Component {
                     <Text style={styles.school}> - Høyskolen Kristiania - </Text>
 
                 </View>
-                <Image style={styles.avatar} source={{uri: 'https://scontent.fosl1-1.fna.fbcdn.net/v/t1.0-9/18697997_10154623209420949_6811334622727457880_n.jpg?_nc_cat=105&_nc_ht=scontent.fosl1-1.fna&oh=be41132c36528b70937cd33ef281db85&oe=5C9DA004'}}/>
+                <Image style={styles.avatar} source={require('../imgs/student2.jpg')}/>
                 <View style={styles.body}>
                     <TouchableOpacity
                         style={styles.buttonContainer}
