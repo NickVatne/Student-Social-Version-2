@@ -8,10 +8,9 @@ export default class LoginScreen extends Component {
         return (
             <SafeAreaView style={styles.container}>
                 <View style={styles.content}>
-                    <Image source={require('../imgs/profileEdit.png')} style={styles.logoImage}/>
+                    <Image source={require('../imgs/meeting-with-a-friend.png')} style={styles.logoImage}/>
                     <Text style={styles.logo}>Student.Social</Text>
                     <View style ={styles.inputContainer}>
-
                         <TextInput underlineColorAndroid='transparent' style={styles.input}
                                    placeholder='username'>
                             Nicolai
@@ -48,8 +47,9 @@ const styles = StyleSheet.create({
 
     },
     logoImage:{
-        width: 50,
-        height: 50,
+        marginTop: 40,
+        width: 100,
+        height: 100,
     },
     logo: {
         color: 'white',
@@ -57,8 +57,8 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         textShadowColor: '#252525',
         textShadowOffset: {width: 2, height: 2},
-        textShadowRadius: 14,
-        marginBottom: 19,
+        textShadowRadius: 8,
+        marginBottom: 15,
         padding: 20,
     },
     inputContainer: {
@@ -95,3 +95,4 @@ const styles = StyleSheet.create({
         color:'white'
     }
 });
+
