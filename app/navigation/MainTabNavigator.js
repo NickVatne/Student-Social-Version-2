@@ -8,6 +8,7 @@ import LoginScreen from '../screens/LoginScreen';
 import ProfileScreen from '../screens/ProfileScreen';
 import ChatScreen from "../screens/ChatScreen";
 import ProfileEdit from "../screens/ProfileEdit";
+import NewEventScreen from "../screens/NewEventScreen";
 
 const HomeStack = createStackNavigator({
     Home: HomeScreen,
@@ -38,6 +39,20 @@ LoginStack.navigationOptions = {
         <TabBarIcon
             focused={focused}
             name={Platform.OS === 'ios' ? 'ios-clipboard' : 'md-clipboard'}
+        />
+    ),
+};
+
+const NewEventStack = createStackNavigator({
+    NewEvent: NewEventScreen,
+});
+
+NewEventStack.navigationOptions = {
+    tabBarLabel: 'New Event',
+    tabBarIcon: ({ focused }) => (
+        <TabBarIcon
+            focused={focused}
+            name={Platform.OS === 'ios' ? 'ios-add' : 'md-add'}
         />
     ),
 };
@@ -75,6 +90,7 @@ ChatStack.navigationOptions = {
 export default createBottomTabNavigator({
     HomeStack,
     ProfileStack,
+    NewEventStack,
     LoginStack,
     ChatStack,
 });
