@@ -27,6 +27,11 @@ export default class LoginScreen extends Component {
                     <TouchableOpacity onPress={this.login} style={styles.buttonContainer}>
                         <Text style={styles.buttonText}>LOGIN</Text>
                     </TouchableOpacity>
+                        <TouchableOpacity
+                            style={styles.buttonContainer}
+                            onPress={()=> this.props.navigation.navigate('HomeScreen')}>
+                            <Text style={styles.buttonText}>LOGIN</Text>
+                        </TouchableOpacity>
 
                 </View>
             </SafeAreaView>

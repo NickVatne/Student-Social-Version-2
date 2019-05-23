@@ -1,11 +1,21 @@
 
 import React from "react"
-import { StyleSheet, SafeAreaView, View, Dimensions, FlatList } from "react-native"
+import {
+  StyleSheet,
+  SafeAreaView,
+  View,
+  Dimensions,
+  FlatList,
+  TouchableOpacity,
+  Props as horizontal,
+  Image
+} from "react-native"
 
 import BigButton from "../components/BigButton"
 import firebase from "@modules/Firebase"
 
 import EventItem from "../components/EventItem"
+
 
 export default class HomeScreen extends React.Component {
   static renderSeparator = (sectionId, rowId) => <View style={styles.separator} key={rowId} />
@@ -37,17 +47,39 @@ export default class HomeScreen extends React.Component {
     console.log("Matching users: ", userDocs)
     this.setState({userDocs})
   }
-
+// TODO = [ Fix positioning to be centered to screen on line 59, 65, 70  ]
   render() {
     return (
       <SafeAreaView style={styles.container}>
         <BigButton onPress={this.onPress} />
+        <View style={{borderBottomColor: 'black', borderBottomWidth: 1, width: Dimensions.get("window").width}}/>
+        <View style={{flex: 1, flexDirection: 'row'}}>
+          <TouchableOpacity style = {styles.nav}>
+            <View style={{flex: 1, flexDirection: 'row', position: 'relative'}}>
+          <Image source={require('../imgs/baseline_chat_black_18dp.png')}/>
+            </View>
+        </TouchableOpacity>
+
+        <TouchableOpacity style = {styles.nav}>
+          <View style={{flex: 1, flexDirection: 'row', position: 'relative'}}>
+          <Image source={require('../imgs/baseline_account_circle_black_18dp.png')}/>
+          </View>
+        </TouchableOpacity>
+        <TouchableOpacity style = {styles.nav}>
+          <View style={{flex: 1, flexDirection: 'row', position: 'relative'}}>
+          <Image source={require('../imgs/baseline_settings_black_18dp.png')} />
+          </View>
+        </TouchableOpacity>
+
+        </View>
+
         <FlatList style={styles.list}
           data={this.state.events}
           renderItem={HomeScreen.renderItem}
           ItemSeparatorComponent={HomeScreen.renderSeparator}
           keyExtractor={HomeScreen.keyExtractor}
         />
+
       </SafeAreaView>
     )
   }
@@ -58,7 +90,7 @@ const styles = StyleSheet.create({
     flex: 1,
     width: Dimensions.get("window").width,
     alignItems: "center",
-    backgroundColor: "black"
+    backgroundColor: "white"
   },
 
   list: {
@@ -70,4 +102,13 @@ const styles = StyleSheet.create({
     width: Dimensions.get("window").width,
     height: 1,
   },
+  nav: {
+    backgroundColor: "transparent",
+    marginTop: 21,
+    height: 50,
+    width: 100,
+  },
+  iconmng: {
+    alignItems: 'center',
+  }
 })
