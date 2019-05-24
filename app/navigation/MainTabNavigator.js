@@ -77,7 +77,7 @@ const ChatStack = createStackNavigator({
     Chat: ChatScreen,
 });
 
-ChatStack.navigationOptions = {
+/*ChatStack.navigationOptions = {
     tabBarLabel: 'Chat',
     tabBarIcon: ({ focused }) => (
         <TabBarIcon
@@ -85,12 +85,12 @@ ChatStack.navigationOptions = {
             name={Platform.OS === 'ios' ? 'ios-chatboxes' : 'md-chatboxes'}
         />
     ),
-};
+};*/
 
 export default createBottomTabNavigator({
     HomeStack,
     ProfileStack,
     NewEventStack,
     LoginStack,
-    ChatStack,
+   // ChatStack,
 });
