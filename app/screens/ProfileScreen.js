@@ -7,11 +7,11 @@ export default class ProfileScreen extends React.Component {
         return (
             <SafeAreaView style={styles.container}>
                 <View style={styles.header}>
-                    <Text style={styles.name}>Mikke Mus</Text>
+                    <Text style={styles.name}>Nicolai  Vatne</Text>
                     <Text style={styles.school}> - Høyskolen Kristiania - </Text>
 
                 </View>
-                <Image style={styles.avatar} source={require('../imgs/student2.jpg')}/>
+                <Image style={styles.avatar} source={require('../imgs/student3.jpg')}/>
                 <View style={styles.body}>
                     <TouchableOpacity
                         style={styles.buttonContainer}

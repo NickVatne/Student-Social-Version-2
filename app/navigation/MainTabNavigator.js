@@ -6,12 +6,18 @@ import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
 import LoginScreen from '../screens/LoginScreen';
 import ProfileScreen from '../screens/ProfileScreen';
-import ChatScreen from "../screens/ChatScreen";
+import ChatScreen from "../screens/Chat/ChatScreen";
 import ProfileEdit from "../screens/ProfileEdit";
 import NewEventScreen from "../screens/NewEventScreen";
+import ChatNavigator from "../screens/Chat/ChatNavigator"
+import ChatScreen2 from "../screens/Chat/ChatScreen2";
 
 const HomeStack = createStackNavigator({
     Home: HomeScreen,
+    Chat: ChatScreen,
+    ChatNav: ChatNavigator,
+    Chat2: ChatScreen2,
+
 
 });
 
@@ -92,5 +98,5 @@ export default createBottomTabNavigator({
     ProfileStack,
     NewEventStack,
     LoginStack,
-   // ChatStack,
+    //ChatStack,
 });

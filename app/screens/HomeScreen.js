@@ -53,9 +53,10 @@ export default class HomeScreen extends React.Component {
                 <View style={{borderBottomColor: 'black', borderBottomWidth: 1, width: Dimensions.get("window").width}}/>
                 <BigButton onPress={this.onPress}/>
                 <View style={{borderBottomColor: 'black', borderBottomWidth: 1, width: Dimensions.get("window").width}}/>
+
                 <View style={{flex: 1, flexDirection: 'row'}}>
                     <TouchableOpacity
-                        onPress={() => this.props.navigation.navigate('Chat')}
+                        onPress={() => this.props.navigation.navigate('ChatNav')}
                         style={styles.nav}>
                         <View style={{flex: 1, flexDirection: 'row', position: 'relative'}}>
                             <Image
@@ -71,7 +72,9 @@ export default class HomeScreen extends React.Component {
                                 source={require('../imgs/baseline_account_circle_black_18dp.png')}/>
                         </View>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.nav}>
+                    <TouchableOpacity
+                        onPress={() => this.props.navigation.navigate('ChatNav')}
+                        style={styles.nav}>
                         <View style={{flex: 1, flexDirection: 'row', position: 'relative'}}>
                             <Image
                                 //TODO Make Settings Screen

@@ -1,12 +1,12 @@
 import React, {Component} from 'react'
 import {StyleSheet, Text, View, SafeAreaView} from 'react-native'
-import { GiftedChat } from "react-native-gifted-chat";
+import { GiftedChat } from "react-native-gifted-chat/lib/index";
 import { ChatManager, TokenProvider } from '@pusher/chatkit-client';
 
 
 const CHATKIT_TOKEN_PROVIDER_ENDPOINT = 'https://us1.pusherplatform.io/services/chatkit_token_provider/v1/686994ef-e97a-4823-92a4-5862fcf9afab/token';
 const CHATKIT_INSTANCE_LOCATOR = 'v1:us1:686994ef-e97a-4823-92a4-5862fcf9afab';
-const CHATKIT_ROOM_ID = '19414051';
+const CHATKIT_ROOM_ID = '19414415';
 const CHATKIT_USER_NAME = 'Nicolai';
 
 
