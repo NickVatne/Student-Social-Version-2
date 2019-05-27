@@ -8,34 +8,30 @@ export default class LoginScreen extends Component {
         return (
             <SafeAreaView style={styles.container}>
                 <View style={styles.content}>
-                    <Image source={require('../imgs/meeting-with-a-friend.png')} style={styles.logoImage}/>
+                    <Image source={require('../assets/imgs/meeting-with-a-friend.png')} style={styles.logoImage}/>
                     <Text style={styles.logo}>E V E N T O R</Text>
 
-                    <View style ={styles.inputContainer}>
 
-                        <TextInput underlineColorAndroid='transparent' style={styles.input}
-                                   placeholder='username'
-                                   placeholderTextColor='#ffffff'>
-                            Durek
-                        </TextInput>
+                    <TextInput underlineColorAndroid='transparent' style={styles.inputContainer}
+                               placeholder='username'
+                               placeholderTextColor='#ffffff'>
+                    </TextInput>
 
-                        <TextInput secureTextEntry={true} underlineColorAndroid='transparent' style={styles.input}
-                                   placeholder='password'
-                                   placeholderTextColor='#ffffff'>
-                            **********
-                        </TextInput>
+                    <TextInput secureTextEntry={true} underlineColorAndroid='transparent' style={styles.inputContainer}
+                               placeholder='password'
+                               placeholderTextColor='#ffffff'>
+                    </TextInput>
 
-                    </View>
 
-                        <TouchableOpacity
-                            style={styles.buttonContainer}
-                            onPress={()=> this.props.navigation.navigate('HomeScreen')}>
-                            <Text style={styles.buttonText}>LOGIN</Text>
-                        </TouchableOpacity>
+                    <TouchableOpacity
+                        style={styles.buttonContainer}
+                        onPress={()=> this.props.navigation.navigate('HomeScreen')}>
+                        <Text style={styles.buttonText}>LOGIN</Text>
+                    </TouchableOpacity>
 
                     <View style={styles.signupCont}>
                         <Text style={styles.signupText}>Not registered yet? Signup</Text>
-                        <Text style={styles.signupButton}>here</Text>
+                        <Text style={styles.signupButton}> here</Text>
                     </View>
 
                 </View>
@@ -51,6 +47,7 @@ const styles = StyleSheet.create({
     },
     content: {
         alignItems: 'center',
+        justifyContent: 'center',
 
     },
     logoImage:{
@@ -65,7 +62,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
     },
     signupText: {
-        color: 'rgba(255,255,255,0.6),
+        color: 'rgba(255,255,255,0.6)',
         fontSize: 16,
     },
     signupButton: {
@@ -85,7 +82,8 @@ const styles = StyleSheet.create({
     },
     inputContainer: {
         width: 300,
-        backgroundColor: 'rgba(255,255,255,0.3',
+        height: 50,
+        backgroundColor: 'rgba(255,255,255,0.3)',
         borderRadius: 25,
         paddingHorizontal: 16,
         fontSize: 16,
@@ -94,14 +92,10 @@ const styles = StyleSheet.create({
 
     },
     input: {
-        fontSize: 15,
-        height: 39,
-        padding: 11,
-        marginBottom: 30,
-        borderBottomWidth: 1
+
     },
     buttonContainer: {
-        alignSelf: 'stretch',
+        width: 300,
         margin: 21,
         padding: 21,
         borderWidth: 1,
