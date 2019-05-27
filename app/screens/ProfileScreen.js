@@ -1,96 +1,181 @@
-import React, {Component} from 'react';
-import {StyleSheet, Text, View, Image, TouchableOpacity, SafeAreaView, Button} from 'react-native';
+import React, { Component } from 'react';
+import {
+    StyleSheet,
+    Text,
+    View,
+    Image,
+    TouchableOpacity,
+} from 'react-native';
 
 export default class ProfileScreen extends React.Component {
 
     render() {
         return (
-            <SafeAreaView style={styles.container}>
+            <View style={styles.container}>
                 <View style={styles.header}>
-                    <Text style={styles.name}>Nicolai  Vatne</Text>
-                    <Text style={styles.school}> - Høyskolen Kristiania - </Text>
+                    <Text style={styles.nametop}>Nicolai Vatne</Text>
+
 
                 </View>
-                <Image style={styles.avatar} source={require('../imgs/student3.jpg')}/>
+                <Image style={styles.hk} source={require('../imgs/hk.png')}/>
+                <TouchableOpacity
+                    onPress={()=> this.props.navigation.navigate('ProfileEdit')}>
+                <Image style={styles.settingsIcon} source={require('../imgs/baseline_settings_white_18dp.png')}/>
+                </TouchableOpacity>
+                <Image style={styles.avatar} source={require('../imgs/profileEdit.png')}/>
                 <View style={styles.body}>
+                    <Text style={styles.eventor}>Eventer</Text>
                     <TouchableOpacity
-                        style={styles.buttonContainer}
-                        onPress={()=> this.props.navigation.navigate('ProfileEdit')}>
-                        <Text style={styles.editors}>Edit my Profile</Text>
+                        onPress={()=> this.props.navigation.navigate('ChatNav')}>
+                    <Image source={require('../imgs/eventProfile.png')}/>
                     </TouchableOpacity>
-                    <TouchableOpacity
-                        style={styles.buttonContainer}
-                        onPress={()=> this.props.navigation.navigate('HomeScreen')}>
-                        <Text style={styles.editors}>Edit my Preferences</Text>
+                    <Text style={styles.interesserText}>Interesser</Text>
+                </View>
+
+                <View style={styles.interesser}>
+                    <TouchableOpacity style={styles.foto}>
+                        <Image style={styles.sykBild} source={{uri: 'http://felixandvanessa.website/wp-content/uploads/2018/01/HONEYMOONLOGO-3.png'}}/>
+                        <Text style={styles.fotoText}>Fotografering</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.sykling}>
+                        <Image style={styles.sykBild} source={{uri: 'http://www.clker.com/cliparts/v/x/e/u/8/7/white-cyclist-bicycle-hi.png'}}/>
+                        <Text style={styles.sykText}>Sykling</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.gaming}>
+                        <Image style={styles.sykBild} source={{uri: 'https://t1.rbxcdn.com/7c0e8f9aac71bd7758b955ed7974f1e3'}}/>
+                        <Text style={styles.gamText}>Gaming</Text>
                     </TouchableOpacity>
                 </View>
-            </SafeAreaView>
+            </View>
         );
     }
 }
 
 const styles = StyleSheet.create({
     header:{
-        backgroundColor: '#455a64',
+        backgroundColor: "#2D4452",
         height:250,
-        alignItems: 'center',
+    },
+    hk:{
+        width: 50,
+        height: 50,
+        borderRadius: 25,
+        borderWidth: 4,
+        borderColor: "white",
+        backgroundColor: "white",
+        position: 'absolute',
+        marginLeft: 20,
+        marginTop: 100,
+
     },
     avatar: {
-        width: 135,
-        height: 135,
-        borderRadius: 63,
+        width: 130,
+        height: 130,
+        borderRadius: 60,
         borderWidth: 4,
-        borderColor: 'transparent',
-        marginBottom:10,
+        borderColor: "white",
+        marginBottom: 20,
         alignSelf:'center',
         position: 'absolute',
-        marginTop: 40,
-    },
-    name: {
-        marginTop: 200,
-        fontSize: 16,
-        color: '#fff',
-        fontWeight: 'bold',
-    },
-    school: {
-        fontSize: 14,
-        color: '#0394c0',
-        fontWeight: '300',
-        fontStyle: 'italic'
-    },
-    editors: {
-        color: '#fff',
-        fontWeight: 'bold',
+        marginTop: 60,
+        backgroundColor: 'white',
     },
     body:{
-        marginTop:40,
+        //marginTop: 40,
+        //backgroundColor: "#2D4452",
+        color: "white",
     },
-    bodyContent: {
-        flex: 1,
-        alignItems: 'center',
-        padding:30,
-    },
-    info:{
+    nametop:{
         fontSize:16,
-        color: "#00BFFF",
-        marginTop:10
-    },
-    description:{
-        fontSize:16,
-        color: "#696969",
-        marginTop: 35,
+        color: 'white',
+        marginTop: 200,
         textAlign: 'center'
     },
-    buttonContainer: {
-        marginTop:50,
-        height:45,
-        left: 75 ,
-        flexDirection: 'row',
+    eventor:{
+        fontSize:22,
+        color:"black",
+        fontWeight:'400',
+        textAlign: 'center',
+        marginTop: -20,
+    },
+    merInfo:{
+        marginTop: 40,
+        height: 25,
+        left: 142,
+        textAlign: 'center',
         justifyContent: 'center',
         alignItems: 'center',
-        marginBottom:20,
-        width:250,
-        borderRadius:30,
-        backgroundColor: '#455a64',
+        marginBottom: 20,
+        width: 75,
+        borderRadius: 30,
+        color: 'white',
+        backgroundColor: "#2D4452",
     },
+    interesserText:{
+        fontSize:22,
+        color:"black",
+        fontWeight:'400',
+        textAlign: 'center',
+        marginTop: -30,
+    },
+    interesser:{
+        flex: 1,
+        flexDirection: 'row',
+        left: 7,
+    },
+    foto:{
+        marginTop: 20,
+        height: 90,
+        left: 5,
+        alignItems: 'center',
+        marginBottom: 20,
+        width: 90,
+        borderRadius: 60,
+        color:"#696969",
+        backgroundColor: "#2D4452",
+    },
+    fotoText:{
+        marginTop: 10,
+    },
+    sykText:{
+        marginTop: 10,
+    },
+    gamText:{
+        marginTop: 10,
+    },
+    sykling:{
+        left: 50,
+        marginTop: 20,
+        height: 90,
+        alignItems: 'center',
+        marginBottom: 20,
+        width: 90,
+        borderRadius: 70,
+        color:"#696969",
+        backgroundColor: "#2D4452",
+    },
+    sykBild:{
+        height: 75,
+        width: 85,
+        //borderRadius: 100,
+        marginTop: 5,
+    },
+    gaming:{
+        left: 90,
+        marginTop: 20,
+        height: 90,
+        alignItems: 'center',
+        marginBottom: 20,
+        width: 90,
+        borderRadius: 60,
+        color:"#696969",
+        backgroundColor: "#2D4452",
+    },
+    settingsIcon:{
+        left: 330,
+        top: -220,
+
+    }
+
+
 });
