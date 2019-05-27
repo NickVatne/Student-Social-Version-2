@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
     },
     signupText: {
-        color: 'rgba(255,255,255,0.6',
+        color: 'rgba(255,255,255,0.6),
         fontSize: 16,
     },
     signupButton: {
@@ -85,15 +85,13 @@ const styles = StyleSheet.create({
     },
     inputContainer: {
         width: 300,
-        marginBottom: 0,
-        marginVertical: 10,
-        paddingBottom: 11,
-        borderWidth: 1,
+        backgroundColor: 'rgba(255,255,255,0.3',
         borderRadius: 25,
+        paddingHorizontal: 16,
         fontSize: 16,
         color: '#ffffff',
-        backgroundColor: 'rgba(255,255,255,0.3)',
-        borderBottomWidth: 1
+        marginVertical: 10,
+
     },
     input: {
         fontSize: 15,
