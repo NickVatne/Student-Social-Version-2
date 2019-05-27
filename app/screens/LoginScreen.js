@@ -9,28 +9,34 @@ export default class LoginScreen extends Component {
             <SafeAreaView style={styles.container}>
                 <View style={styles.content}>
                     <Image source={require('../imgs/meeting-with-a-friend.png')} style={styles.logoImage}/>
-                    <Text style={styles.logo}>Student.Social</Text>
+                    <Text style={styles.logo}>E V E N T O R</Text>
+
                     <View style ={styles.inputContainer}>
+
                         <TextInput underlineColorAndroid='transparent' style={styles.input}
-                                   placeholder='username'>
-                            Nicolai
+                                   placeholder='username'
+                                   placeholderTextColor='#ffffff'>
+                            Durek
                         </TextInput>
 
                         <TextInput secureTextEntry={true} underlineColorAndroid='transparent' style={styles.input}
-                                   placeholder='password'>
+                                   placeholder='password'
+                                   placeholderTextColor='#ffffff'>
                             **********
                         </TextInput>
 
                     </View>
 
-                    <TouchableOpacity onPress={this.login} style={styles.buttonContainer}>
-                        <Text style={styles.buttonText}>LOGIN</Text>
-                    </TouchableOpacity>
                         <TouchableOpacity
                             style={styles.buttonContainer}
                             onPress={()=> this.props.navigation.navigate('HomeScreen')}>
                             <Text style={styles.buttonText}>LOGIN</Text>
                         </TouchableOpacity>
+
+                    <View style={styles.signupCont}>
+                        <Text style={styles.signupText}>Not registered yet? Signup</Text>
+                        <Text style={styles.signupButton}>here</Text>
+                    </View>
 
                 </View>
             </SafeAreaView>
@@ -50,6 +56,21 @@ const styles = StyleSheet.create({
         marginTop: 40,
         width: 100,
         height: 100,
+    },
+    signupCont: {
+        flexGrow: 1,
+        alignItems: 'flex-end',
+        justifyContent: 'center',
+        flexDirection: 'row',
+    },
+    signupText: {
+        color: 'rgba(255,255,255,0.6',
+        fontSize: 16,
+    },
+    signupButton: {
+        color: '#ffffff',
+        fontSize: 16,
+        fontWeight: '500',
     },
     logo: {
         color: 'white',
