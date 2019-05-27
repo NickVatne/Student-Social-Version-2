@@ -47,6 +47,7 @@ export default class LoginScreen extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        backgroundColor: '#455a64',
     },
     content: {
         alignItems: 'center',
@@ -83,14 +84,15 @@ const styles = StyleSheet.create({
         padding: 20,
     },
     inputContainer: {
-        margin: 19,
+        width: 300,
         marginBottom: 0,
-        padding: 19,
+        marginVertical: 10,
         paddingBottom: 11,
-        alignSelf: 'stretch',
-        borderColor: '#2d4452',
         borderWidth: 1,
-        backgroundColor: 'rgb(255,255,255)',
+        borderRadius: 25,
+        fontSize: 16,
+        color: '#ffffff',
+        backgroundColor: 'rgba(255,255,255,0.3)',
         borderBottomWidth: 1
     },
     input: {
