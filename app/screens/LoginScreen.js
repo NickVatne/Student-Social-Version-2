@@ -8,7 +8,7 @@ export default class LoginScreen extends Component {
         return (
             <SafeAreaView style={styles.container}>
                 <View style={styles.content}>
-                    <Image source={require('../assets/imgs/meeting-with-a-friend.png')} style={styles.logoImage}/>
+                    <Image source={require('../imgs/meeting-with-a-friend.png')} style={styles.logoImage}/>
                     <Text style={styles.logo}>E V E N T O R</Text>
 
 
@@ -25,7 +25,7 @@ export default class LoginScreen extends Component {
 
                     <TouchableOpacity
                         style={styles.buttonContainer}
-                        onPress={()=> this.props.navigation.navigate('HomeScreen')}>
+                        onPress={()=> this.props.navigation.navigate('Home')}>
                         <Text style={styles.buttonText}>LOGIN</Text>
                     </TouchableOpacity>
 
@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
         fontSize: 16,
     },
     signupButton: {
-        color: '#ffffff',
+        color: '#00bfff',
         fontSize: 16,
         fontWeight: '500',
     },
