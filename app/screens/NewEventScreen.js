@@ -27,30 +27,36 @@ export default class NewEventScreen extends React.Component {
         return (
             <View style={styles.container}>
                 <View style={styles.header}>
-                    <Text style={styles.headerText}>Nytt Event</Text>
+                    <Text style={styles.headerText}>Create Event</Text>
                 </View>
                 <View style={styles.informationAreaContainer}>
                     <View style={styles.infoContainer}>
-                        <Text style={styles.optionsItemLeft}>Velg dato:</Text>
-                        <DatePick mode="date"/>
-
-                    </View>
-                    <View style={styles.infoContainer}>
-                        <Text style={styles.optionsItemLeft}>Tid:</Text>
-                        <TimePick/>
-                    </View>
-                    <View style={styles.infoContainer}>
-                        <Text style={styles.optionsItemLeft}>Adresse:</Text>
+                        <Text style={styles.optionsItemLeft}>Address:</Text>
                         <TextInput
                             onChangeText={(address) => this.setState({address})}
                             value={this.state.address}
                         />
                     </View>
                     <View style={styles.infoContainer}>
-                        <Text style={styles.optionsItemLeft}>Fargekode:</Text>
+                        <Text style={styles.optionsItemLeft}>Pick date:</Text>
+                        <DatePick mode="date"/>
                     </View>
                     <View style={styles.infoContainer}>
-                        <Text style={styles.optionsItemLeft}>Varslinger:</Text>
+                        <Text style={styles.optionsItemLeft}>Time:</Text>
+                        <TimePick/>
+                    </View>
+                    <View style={styles.infoContainer}>
+                        <Text style={styles.optionsItemLeft}>Address:</Text>
+                        <TextInput
+                            onChangeText={(address) => this.setState({address})}
+                            value={this.state.address}
+                        />
+                    </View>
+                    <View style={styles.infoContainer}>
+                        <Text style={styles.optionsItemLeft}>Fargekode: </Text>
+                    </View>
+                    <View style={styles.infoContainer}>
+                        <Text style={styles.optionsItemLeft}>Varslingar:</Text>
                         <Switch style={styles.optionsItemRight}
                                 onValueChange = {this.toggleSwitch}
                                 value = {this.state.notificationSwitchValue}/>
@@ -71,7 +77,7 @@ const styles = StyleSheet.create({
     },
     header: {
         alignSelf: 'stretch',
-        backgroundColor: "#00BFFF",
+        backgroundColor: "#455A64",
         alignItems: "center",
         justifyContent: "center",
         borderBottomWidth: 1,
@@ -95,6 +101,7 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         alignItems: 'center',
         height: 45,
+        paddingRight: 20,
         borderBottomColor: "grey",
         borderBottomWidth: 1,
     },
