@@ -24,7 +24,7 @@ export default class ProfileScreen extends React.Component {
                 </TouchableOpacity>
                 <Image style={styles.avatar} source={require('../imgs/profileEdit.png')}/>
                 <View style={styles.body}>
-                    <Text style={styles.eventor}>Eventer</Text>
+                    <Text style={styles.eventor}>Events</Text>
                     <TouchableOpacity
                         onPress={()=> this.props.navigation.navigate('ChatNav')}>
                     <Image source={require('../imgs/eventProfile.png')}/>
@@ -89,7 +89,8 @@ const styles = StyleSheet.create({
         fontSize:16,
         color: 'white',
         marginTop: 200,
-        textAlign: 'center'
+        textAlign: 'center',
+        fontWeight: 'bold',
     },
     eventor:{
         fontSize:22,

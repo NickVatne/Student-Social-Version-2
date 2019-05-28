@@ -7,6 +7,7 @@ export default class NewEventScreen extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            title: 'New event',
             date: new Date(),
             address: 'Oslogate 1',
             notificationSwitchValue: false,
@@ -27,14 +28,16 @@ export default class NewEventScreen extends React.Component {
         return (
             <View style={styles.container}>
                 <View style={styles.header}>
-                    <Text style={styles.headerText}>Create Event</Text>
+                    <Text style={styles.headerText}>{this.state.title}</Text>
                 </View>
                 <View style={styles.informationAreaContainer}>
+
                     <View style={styles.infoContainer}>
-                        <Text style={styles.optionsItemLeft}>Address:</Text>
+                        <Text style={styles.optionsItemLeft}>Event name:</Text>
                         <TextInput
-                            onChangeText={(address) => this.setState({address})}
-                            value={this.state.address}
+                            placeholder='name your event'
+                            onChangeText={(title) => this.setState({title})}
+                            value={this.state.title}
                         />
                     </View>
                     <View style={styles.infoContainer}>
