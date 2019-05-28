@@ -8,14 +8,14 @@ import "firebase/firestore"
 // console.log(firebase)
 // console.log(firebase.app())
 
-var firebaseConfig = {
-    apiKey: "AIzaSyAbeE0RkT0pROEaDvYoAi1Hb8poyJ1nNoM",
-    authDomain: "studentsocial16.firebaseapp.com",
-    databaseURL: "https://studentsocial16.firebaseio.com",
-    projectId: "studentsocial16",
-    storageBucket: "studentsocial16.appspot.com",
-    messagingSenderId: "731593389026",
-    appId: "1:731593389026:web:a6ac7de5d8d47805"
+const firebaseConfig = {
+    apiKey: "AIzaSyBhNyBXa0WBxhEpBBOy5sOngZrhgH09xbU",
+    authDomain: "studentsocial-f7e69.firebaseapp.com",
+    databaseURL: "https://studentsocial-f7e69.firebaseio.com",
+    projectId: "studentsocial-f7e69",
+    storageBucket: "studentsocial-f7e69.appspot.com",
+    messagingSenderId: "398762582509",
+    appId: "1:398762582509:web:0b7af139a7623517"
 };
 //initializeApp
 
