@@ -20,29 +20,46 @@ export default class ChooseSchool extends React.Component {
                 </View>
                 <TouchableOpacity
                     onPress={() => this.props.navigation.navigate('ChatNav')}>
-                <Image style={styles.hkStor} source={require('../imgs/hk.png')}/>
+                    <Image style={styles.hkStor} source={require('../imgs/hk.png')}/>
                 </TouchableOpacity>
                 <Text style={styles.velg}>Velg Skole:</Text>
                 <View style={styles.interesser1}>
-                    <TouchableOpacity style={styles.foto}>
-                        <Image style={styles.hkLiten} source={require('../imgs/hk.png')}/>
+                    <TouchableOpacity style={styles.foto}
+                                      onPress={() => this.props.navigation.navigate('ChatNav')}>
+                    <Image style={styles.hkLiten} source={require('../imgs/hk.png')}/>
+                        <Text style={styles.text}>HK</Text>
+
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.foto2}>
-                        <Image style={styles.bi} source={require('../imgs/bi.png')}/>
+                    <TouchableOpacity style={styles.foto2}
+                                      onPress={() => this.props.navigation.navigate('ChatNav')}>
+                    <Image style={styles.bi} source={require('../imgs/bi.png')}/>
+                        <Text style={styles.text}>BI</Text>
+
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.foto3}>
-                        <Image style={styles.hkLiten} source={require('../imgs/osloMet.png')}/>
+                    <TouchableOpacity style={styles.foto3}
+                                      onPress={() => this.props.navigation.navigate('ChatNav')}>
+                    <Image style={styles.hkLiten} source={require('../imgs/osloMet.png')}/>
+                        <Text style={styles.text}>Oslo Met</Text>
+
                     </TouchableOpacity>
                 </View>
                 <View style={styles.interesser2}>
-                    <TouchableOpacity style={styles.foto4}>
-                        <Image style={styles.hkLiten} source={require('../imgs/uio.png')}/>
+                    <TouchableOpacity style={styles.foto4}
+                                      onPress={() => this.props.navigation.navigate('ChatNav')}>
+                    <Image style={styles.hkLiten} source={require('../imgs/uio.png')}/>
+                        <Text style={styles.text}>UiO</Text>
+
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.foto5}>
-                        <Image style={styles.hkLiten} source={require('../imgs/sonans.png')}/>
+                    <TouchableOpacity style={styles.foto5}
+                                      onPress={() => this.props.navigation.navigate('ChatNav')}>
+                    <Image style={styles.hkLiten} source={require('../imgs/sonans.png')}/>
+                        <Text style={styles.text}>Sonans</Text>
+
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.foto6}>
-                        <Image style={styles.hkLiten} source={require('../imgs/bjorknes.png')}/>
+                    <TouchableOpacity style={styles.foto6}
+                                      onPress={() => this.props.navigation.navigate('ChatNav')}>
+                    <Image style={styles.hkLiten} source={require('../imgs/bjorknes.png')}/>
+                        <Text style={styles.text}>Bjørknes</Text>
                     </TouchableOpacity>
                 </View>
             </View>
@@ -119,7 +136,7 @@ const styles = StyleSheet.create({
         left: 7,
     },
     interesser2:{
-        top: 430,
+        top: 440,
         flex: 1,
         flexDirection: 'row',
         left: 7,
@@ -177,5 +194,9 @@ const styles = StyleSheet.create({
         width: 90,
         borderRadius: 60,
         backgroundColor: "#d8d8d8",
+    },
+    text:{
+      fontSize: 16,
+      top: 92,
     },
 });
