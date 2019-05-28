@@ -11,12 +11,14 @@ import ProfileEdit from "../screens/ProfileEdit";
 import NewEventScreen from "../screens/NewEventScreen";
 import ChatNavigator from "../screens/Chat/ChatNavigator"
 import ChatScreen2 from "../screens/Chat/ChatScreen2";
+import ChooseSchool from "../screens/ChooseSchool";
 
 const HomeStack = createStackNavigator({
     Home: HomeScreen,
     Chat: ChatScreen,
     ChatNav: ChatNavigator,
     Chat2: ChatScreen2,
+    School: ChooseSchool,
 
 
 });

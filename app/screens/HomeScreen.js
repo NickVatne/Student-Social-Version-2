@@ -83,7 +83,7 @@ export default class HomeScreen extends React.Component {
                     </TouchableOpacity>
 
                     <TouchableOpacity
-                        onPress={() => this.props.navigation.navigate('Profile')}
+                        onPress={() => this.props.navigation.navigate('School')}
                         style={styles.nav}>
                         <View style={{flex: 1, flexDirection: 'row', position: 'relative'}}>
                             <Image
