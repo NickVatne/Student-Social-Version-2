@@ -36,13 +36,13 @@ export default class ChooseSchool extends React.Component {
                 </View>
                 <View style={styles.interesser2}>
                     <TouchableOpacity style={styles.foto4}>
-                        <Image style={styles.hkLiten} source={require('../imgs/hk.png')}/>
+                        <Image style={styles.hkLiten} source={require('../imgs/uio.png')}/>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.foto5}>
-                        <Image style={styles.hkLiten} source={require('../imgs/hk.png')}/>
+                        <Image style={styles.hkLiten} source={require('../imgs/sonans.png')}/>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.foto6}>
-                        <Image style={styles.hkLiten} source={require('../imgs/hk.png')}/>
+                        <Image style={styles.hkLiten} source={require('../imgs/bjorknes.png')}/>
                     </TouchableOpacity>
                 </View>
             </View>
@@ -54,10 +54,9 @@ const styles = StyleSheet.create({
     container:{
     },
     SchoolName:{
-        fontSize: 16,
+        fontSize: 22,
         color: "#FFFFFF",
         marginTop: 20,
-        marginBottom: 20,
         textAlign: 'center'
 
     },
