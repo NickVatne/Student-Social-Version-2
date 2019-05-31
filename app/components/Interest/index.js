@@ -18,14 +18,14 @@ const styles = StyleSheet.create({
     borderRadius: 60,
     alignItems: "center",
     justifyContent: "center",
-    height: 120,
-    width: 120,
-    margin: 10,
+    height: 110,
+    width: 110,
+    margin: 8,
   },
 
   image: {
-    height: 60,
-    width: 60,
+    height: 55,
+    width: 55,
   },
 
   text: {

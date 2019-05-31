@@ -4,7 +4,7 @@ import { StyleSheet, SafeAreaView, View } from "react-native"
 
 import firebase from "@modules/Firebase"
 
-import Interest from "./Interest"
+import Interest from "../../components/Interest"
 
 export default class ProfileScreen extends React.Component {
   state = {
@@ -49,7 +49,6 @@ export default class ProfileScreen extends React.Component {
   render() {
     return (
       <SafeAreaView style={styles.container}>
-
         <View style={styles.interestsContainer}>
           {this.renderInterests()}
         </View>
@@ -60,11 +59,11 @@ export default class ProfileScreen extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
   },
 
   interestsContainer: {
-    alignItems: "center",
+    justifyContent: "center",
     flexDirection: "row",
+    flexWrap: "wrap",
   },
 })
