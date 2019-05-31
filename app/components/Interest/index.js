@@ -27,7 +27,6 @@ const styles = StyleSheet.create({
     height: 55,
     width: 55,
   },
-
   text: {
     color: "white",
   },
