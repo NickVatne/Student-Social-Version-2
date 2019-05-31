@@ -1,5 +1,5 @@
 import React from "react"
-import { Platform } from "react-native"
+import { Platform, Button } from "react-native"
 import { createStackNavigator, createBottomTabNavigator } from "react-navigation"
 
 import TabBarIcon from "../components/TabBarIcon"
@@ -21,24 +21,6 @@ const HomeStack = createStackNavigator({
       title: "Home",
     },
   },
-  Chat: {
-    screen: Chat,
-    navigationOptions: ({ navigation }) => ({
-      title: navigation.getParam("userId"),
-    }),
-  },
-  ChatMain: {
-    screen: ChatMain,
-    navigationOptions: {
-      title: "Choose chatroom",
-    },
-  },
-  School: {
-    screen: ChooseSchool,
-    navigationOptions: {
-      title: "Choose your school",
-    },
-  },
 
   FriendResults: {
     screen: FriendResults,
@@ -46,8 +28,17 @@ const HomeStack = createStackNavigator({
       title: "Results",
     },
   },
+
+  // Chat screen on the home tab
+  HomeChat: {
+    screen: Chat,
+    navigationOptions: ({ navigation }) => ({
+      title: navigation.getParam("userId"),
+    }),
+  },
 }, {
   navigationOptions: {
+    headerRight: ({ navigation }) => <Button title="Settings" />,
     tabBarLabel: "Home",
     tabBarIcon: ({ focused }) => (
       <TabBarIcon
@@ -62,15 +53,59 @@ const HomeStack = createStackNavigator({
   },
 })
 
-const NewEventStack = createStackNavigator({
-  NewEvent: {
-    screen: NewEventScreen,
+const ChatStack = createStackNavigator({
+  ChatMain: {
+    screen: ChatMain,
     navigationOptions: {
-      title: "New event",
+      title: "Choose chatroom",
     },
+  },
+
+  // Chat screen on the Chat tab
+  Chat: {
+    screen: Chat,
+    navigationOptions: ({ navigation }) => ({
+      title: navigation.getParam("userId"),
+    }),
   },
 }, {
   navigationOptions: {
+    tabBarLabel: "Chat",
+    tabBarIcon: ({ focused }) => (
+      <TabBarIcon
+        focused={focused}
+        name={
+          Platform.OS === "ios"
+            ? `ios-chatbubbles${focused ? "" : "-outline"}`
+            : "md-chatbubbles"
+        }
+      />
+    ),
+  },
+})
+
+const School = {
+  screen: ChooseSchool,
+  navigationOptions: {
+    title: "School",
+    tabBarLabel: "School",
+    tabBarIcon: ({ focused }) => (
+      <TabBarIcon
+        focused={focused}
+        name={
+          Platform.OS === "ios"
+            ? `ios-school${focused ? "" : "-outline"}`
+            : "md-school"
+        }
+      />
+    ),
+  },
+}
+
+const NewEvent = {
+  screen: NewEventScreen,
+  navigationOptions: {
+    title: "New event",
     tabBarLabel: "New Event",
     tabBarIcon: ({ focused }) => (
       <TabBarIcon
@@ -79,7 +114,7 @@ const NewEventStack = createStackNavigator({
       />
     ),
   },
-})
+}
 
 const ProfileStack = createStackNavigator({
   Profile: {
@@ -108,6 +143,8 @@ const ProfileStack = createStackNavigator({
 
 export default createBottomTabNavigator({
   HomeStack,
+  ChatStack,
   ProfileStack,
-  NewEventStack,
+  NewEvent,
+  School,
 })

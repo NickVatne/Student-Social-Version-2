@@ -1,10 +1,10 @@
 import React from "react"
-import { StyleSheet, View } from "react-native"
+import { StyleSheet, SafeAreaView } from "react-native"
 
 import firebase from "@modules/Firebase"
 
 import List from "../../components/List"
-import Room from "./Room"
+import Room from "../../components/Room"
 
 export default class ChatMain extends React.Component {
   state = {
@@ -27,14 +27,12 @@ export default class ChatMain extends React.Component {
 
   render() {
     return (
-      <View style={styles.container}>
+      <SafeAreaView style={styles.container}>
         <List data={this.getItems()} />
-      </View>
+      </SafeAreaView>
     )
   }
 }
-
-// <Room header="Party" participants={["Jani", "Nico"]} uri="https://catering-kvatric.hr/wp-content/uploads/2017/04/best-party-planner.jpg" />
 
 const styles = StyleSheet.create({
   container: {

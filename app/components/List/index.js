@@ -26,7 +26,7 @@ export default class List extends React.Component {
         {...this.props}
 
         getItemLayout={this.props.itemHeight && this.getItemLayout}
-        removeClippedSubviews={this.props.removeClippedSubviews !== false}
+        removeClippedSubviews
       />
     )
   }

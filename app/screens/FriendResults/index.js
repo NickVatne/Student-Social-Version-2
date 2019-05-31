@@ -48,7 +48,7 @@ export default class FriendResults extends React.Component {
       id,
       docs,
       key: id,
-      openChat: path => this.props.navigation.navigate("Chat", { path }),
+      openChat: path => this.props.navigation.navigate("HomeChat", { path }),
     },
   }))
 
