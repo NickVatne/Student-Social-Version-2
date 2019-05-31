@@ -12,8 +12,9 @@ Updated Version of the project
 
 # Known Bugs
 
-- Fix Centering av iconer på frontskjermen, og deep link dem til Chat, Profile, Settings
-- Implementer Settings page
-- La Login komme før Homescreen og fjern den fra baren, sammen med Profile så fort vi har inkludert det på homescreen ikonene
-- Fiks chat på tvers av universitetsforum.
+- Implementer en ny profilside fordi den forrige var litt for scuffed for å bruke videre, for mye bilder og greier.
+- Finn ut hva som ønskes å gjøre med create event, fordi akuratt nå spiller den ikke noe rolle.
+- OTHER THAN THAT, WE DID IT.
+
+
 

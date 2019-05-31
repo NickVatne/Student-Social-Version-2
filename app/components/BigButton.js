@@ -22,7 +22,6 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-
   text: {
     color: "white",
     fontSize: 20,
