@@ -5,7 +5,8 @@ import { StyleSheet, TouchableOpacity, Text, Dimensions } from "react-native"
 export default ({ onPress }) => (
   <TouchableOpacity
     style={styles.touchable}
-    onPress={onPress}>
+    onPress={onPress}
+  >
     <Text style={styles.text}>Find Friends</Text>
   </TouchableOpacity>
 )
@@ -21,9 +22,9 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-  
+
   text: {
     color: "white",
     fontSize: 20,
-  }
+  },
 })

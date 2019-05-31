@@ -4,7 +4,7 @@ import { StyleSheet, View, Text, Dimensions, SafeAreaView } from "react-native"
 
 export default ({ doc }) => {
   const data = doc.data()
-  
+
   return (
     <View style={styles.container}>
       <Text>{data.timestamp.toLocaleString("NO")}</Text>
@@ -27,5 +27,5 @@ const styles = StyleSheet.create({
   text: {
     color: "#4b4b4b",
     fontSize: 18,
-  }
+  },
 })
