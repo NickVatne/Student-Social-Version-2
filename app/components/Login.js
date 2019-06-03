@@ -7,8 +7,8 @@ const BANNER = require("../imgs/meeting-with-a-friend.png")
 
 export default class Login extends Component {
   state = {
-    username: "sprinteren2",
-    password: "gruppe16sprint",
+    username: null,
+    password: null,
   }
 
   login = async () => {
@@ -32,7 +32,7 @@ export default class Login extends Component {
       <SafeAreaView style={styles.container}>
         <View style={styles.content}>
           <Image source={BANNER} style={styles.logoImage} />
-          <Text style={styles.logo}>E V E N T O R</Text>
+          <Text style={styles.logo}>Student.Social</Text>
 
 
           <TextInput
@@ -40,7 +40,7 @@ export default class Login extends Component {
             style={styles.inputContainer}
             placeholder="username"
             placeholderTextColor="#ffffff"
-            defaultValue={this.state.username}
+           // defaultValue={this.state.username}
             onChangeText={username => this.setState({ username })}
           />
 
@@ -50,7 +50,7 @@ export default class Login extends Component {
             style={styles.inputContainer}
             placeholder="password"
             placeholderTextColor="#ffffff"
-            defaultValue={this.state.password}
+           // defaultValue={this.state.password}
             onChangeText={password => this.setState({ password })}
           />
 

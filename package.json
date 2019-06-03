@@ -9,7 +9,7 @@
   "dependencies": {
     "@pusher/chatkit-client": "^1.5.0",
     "@react-native-community/slider": "^1.1.2",
-    "firebase": "^6.1.0",
+    "firebase": "6.0.2",
     "react": "16.6.3",
     "react-native": "^0.59.8",
     "react-native-datepicker": "^1.7.2",

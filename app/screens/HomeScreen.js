@@ -39,8 +39,6 @@ export default class HomeScreen extends React.Component {
       component: Room,
       props: { doc, onPress: () => this.props.navigation.navigate("HomeChat", { path: "events/" + doc.id + "/chat" }) },
     }))
-
-    // TODO = [ Fix positioning to be centered to screen on line 59, 65, 70  ]
     render() {
       console.log("Rendering with length " + this.state.events.length)
       return (
