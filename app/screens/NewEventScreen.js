@@ -1,5 +1,5 @@
 import React from "react"
-import { StyleSheet, Text, View, TextInput, Switch } from "react-native"
+import { StyleSheet, Text, View, TextInput, Switch, TouchableOpacity } from "react-native"
 
 import firebase from "@modules/Firebase"
 
@@ -12,9 +12,10 @@ export default class NewEventScreen extends React.Component {
     super(props)
 
     this.state = {
-      title: "New event",
-      date: new Date(),
-      address: "Oslogate 1",
+      title: "",
+      date: "",
+      time: "",
+      address: "",
       notificationSwitchValue: false,
     }
   }
@@ -30,29 +31,24 @@ export default class NewEventScreen extends React.Component {
     }
 
     createEvent = () => {
-      const name = "Nicos event"
-      const date = new Date()
-      const address = "Oslogate 1"
-      const color = "red"
-      const notifications = true
-      const isPublic = true
-
       const newEventId = firebase.firestore().collection("events").doc().id
 
       firebase.firestore().doc("events/" + newEventId).set({
-        name,
-        date,
-        address,
-        color,
-        notifications,
-        isPublic,
+        name: this.state.title,
+        date: this.state.date,
+        time: this.state.time,
+        address: this.state.address,
+        notifications: this.state.notificationSwitchValue,
+        picture: "https://www.shutterfly.com/ideas/wp-content/uploads/2016/08/50-happy-birthday-quotes-thumb.jpg",
+        participants: ["OJ, Nico, Nora, Martin"],
+        isPublic: true
       })
 
-      firebase.firestore().doc("chats/events/" + newEventId).add({
-        text: "Event created",
-        uid: "event",
-        timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-      })
+      // firebase.firestore().doc("chats/events/" + newEventId).add({
+      //   text: "Event created",
+      //   uid: "exampleID",
+      //   timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+      // })
     }
 
     render() {
@@ -73,17 +69,23 @@ export default class NewEventScreen extends React.Component {
             </View>
             <View style={styles.infoContainer}>
               <Text style={styles.optionsItemLeft}>Pick date:</Text>
-              <DatePick mode="date" />
+              <DatePick mode="date"
+                        onDateChange={date => this.setState({ date })}
+                        value={this.state.date}
+              />
             </View>
             <View style={styles.infoContainer}>
               <Text style={styles.optionsItemLeft}>Time:</Text>
-              <TimePick />
+              <TimePick onDateChange={time => this.setState({ time })}
+                        value={this.state.time}
+              />
             </View>
             <View style={styles.infoContainer}>
               <Text style={styles.optionsItemLeft}>Address:</Text>
               <TextInput
                 onChangeText={address => this.setState({ address })}
                 value={this.state.address}
+                placeholder={"The adress of your event"}
               />
             </View>
             <View style={styles.infoContainer}>
@@ -100,7 +102,14 @@ export default class NewEventScreen extends React.Component {
             <View style={styles.infoContainer}>
               <Text style={styles.optionsItemLeft}>Inviter flere deltakere</Text>
             </View>
+
           </View>
+          <TouchableOpacity
+              onPress={this.createEvent}
+              style={styles.createEventButton}
+          >
+            <Text> Touch Here </Text>
+          </TouchableOpacity>
         </View>
       )
     }
@@ -148,4 +157,9 @@ const styles = StyleSheet.create({
   optionsItemRight: {
     marginRight: 5,
   },
+  createEventButton: {
+    width: "50%",
+    backgroundColor: "grey",
+    alignItems: 'center',
+  }
 })

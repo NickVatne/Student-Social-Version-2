@@ -6,7 +6,7 @@ export default class DatePick extends Component {
   constructor(props) {
     super(props)
     // set value in state for initial date
-    this.state = { date: "15-05-2018" }
+    this.state = { time: "20:00" }
   }
 
   render() {
@@ -15,16 +15,15 @@ export default class DatePick extends Component {
 
         <DatePicker
           style={{ width: 200 }}
-          date={this.state.date} // initial date from state
+          date={this.state.time} // initial date from state
           // The enum of date, datetime and time
-          placeholder="select date"
-          activeOpacity={0}
           mode="time"
+          format="HH:mm"
           showIcon={false}
           confirmBtnText="Confirm"
           cancelBtnText="Cancel"
 
-          onDateChange={date => { this.setState({ date }) }}
+          onDateChange={(time) => { this.props.onDateChange && this.props.onDateChange(time);this.setState({ time }); }}
         />
 
       </View>
