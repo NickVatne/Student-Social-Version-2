@@ -24,7 +24,7 @@ export default class DatePick extends Component {
           confirmBtnText="Confirm"
           cancelBtnText="Cancel"
 
-          onDateChange={date => { this.setState({ date }) }}
+          onDateChange={(date) => { this.props.onDateChange && this.props.onDateChange(date);this.setState({ date }); }}
         />
 
       </View>
