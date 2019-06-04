@@ -10,6 +10,7 @@ import TimePick from "../components/TimePick"
 export default class NewEventScreen extends React.Component {
   constructor(props) {
     super(props)
+
     this.state = {
       title: "New event",
       date: new Date(),
