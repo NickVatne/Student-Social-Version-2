@@ -16,6 +16,7 @@ export default class Main extends React.Component {
   async componentDidMount() {
     YellowBox.ignoreWarnings([
       "Setting a timer for a long period of time",
+        "Can't perform a React state update on an unmounted component."
     ])
 
     this.authListener = firebase.auth().onAuthStateChanged(user => this.setState({ user }))

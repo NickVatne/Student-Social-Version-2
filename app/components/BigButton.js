@@ -14,7 +14,7 @@ export default ({ onPress }) => (
 const styles = StyleSheet.create({
   touchable: {
     margin: 20,
-    backgroundColor: "#2D4452",
+    backgroundColor: "#FF0000",
     borderColor: "black",
     height: Dimensions.get("window").width * 0.7,
     width: Dimensions.get("window").width * 0.7,
