@@ -7,10 +7,11 @@ import DatePick from "../components/DatePick"
 import TimePick from "../components/TimePick"
 
 
+
+
 export default class EventScreen extends React.Component {
   constructor(props) {
     super(props)
-
     this.state = {
       title: "",
       date: "",
@@ -20,31 +21,7 @@ export default class EventScreen extends React.Component {
     }
   }
 
-  toggleSwitch = value => {
-    this.setState({ notificationSwitchValue: value })
-  }
 
-  createEvent = () => {
-    const newEventId = firebase.firestore().collection("events").doc().id;
-    this.props.navigation.navigate("Event");
-
-    firebase.firestore().doc("events/" + newEventId).set({
-      name: this.state.title,
-      date: this.state.date,
-      time: this.state.time,
-      address: this.state.address,
-      notifications: this.state.notificationSwitchValue,
-      picture: "https://www.shutterfly.com/ideas/wp-content/uploads/2016/08/50-happy-birthday-quotes-thumb.jpg",
-      participants: ["You"],
-      isPublic: true
-    })
-
-    // firebase.firestore().doc("chats/events/" + newEventId).add({
-    //   text: "Event created",
-    //   uid: "exampleID",
-    //   timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-    // })
-  }
 
   render() {
     return (
@@ -88,11 +65,6 @@ export default class EventScreen extends React.Component {
             </View>
             <View style={styles.infoContainer}>
               <Text style={styles.optionsItemLeft}>Varslingar:</Text>
-              <Switch
-                  style={styles.optionsItemRight}
-                  onValueChange={this.toggleSwitch}
-                  value={this.state.notificationSwitchValue}
-              />
             </View>
             <View style={styles.infoContainer}>
               <Text style={styles.optionsItemLeft}>Inviter flere deltakere</Text>
