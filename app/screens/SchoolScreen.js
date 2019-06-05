@@ -7,7 +7,12 @@ import {
   SafeAreaView,
 } from "react-native"
 
-export default class ChooseSchool extends React.Component {
+export default class SchoolScreen extends React.Component {
+
+  static navigationOptions = {
+    title: "Home",
+  }
+
   render() {
     return (
       <SafeAreaView style={styles.container}>
