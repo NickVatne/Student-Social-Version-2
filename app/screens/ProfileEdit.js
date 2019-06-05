@@ -25,10 +25,8 @@ export default class ProfileEdit extends React.Component {
     render() {
       return (
         <SafeAreaView style={styles.container}>
-          <View style={styles.topHeader}>
-            <Text style={styles.titleText}>Edit profile</Text>
-          </View>
-          <ScrollView style={{ height: 565 }}>
+
+          <ScrollView style={{ height: 610 }}>
             <Image
               style={styles.picture}
               source={require("../imgs/profileEdit.png")}
@@ -101,11 +99,6 @@ export default class ProfileEdit extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  topHeader: {
-    backgroundColor: "#2D4352",
-    height: 60,
-
-  },
   middleHeader: {
     backgroundColor: "#F8F8F8",
     height: 50,

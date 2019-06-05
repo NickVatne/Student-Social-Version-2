@@ -112,11 +112,6 @@ const styles = StyleSheet.create({
     marginTop: 60,
     backgroundColor: "white",
   },
-  body: {
-    // marginTop: 40,
-    // backgroundColor: "#2D4452",
-    color: "white",
-  },
   nametop: {
     fontSize: 16,
     color: "white",
