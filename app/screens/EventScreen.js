@@ -20,51 +20,46 @@ export default class EventScreen extends React.Component {
     }
   }
 
-    static navigationOptions = {
-      header: null,
-      title: "Home",
-    }
+  toggleSwitch = value => {
+    this.setState({ notificationSwitchValue: value })
+  }
 
+  createEvent = () => {
+    const newEventId = firebase.firestore().collection("events").doc().id;
+    this.props.navigation.navigate("Event");
 
-    toggleSwitch = value => {
-      this.setState({ notificationSwitchValue: value })
-    }
+    firebase.firestore().doc("events/" + newEventId).set({
+      name: this.state.title,
+      date: this.state.date,
+      time: this.state.time,
+      address: this.state.address,
+      notifications: this.state.notificationSwitchValue,
+      picture: "https://www.shutterfly.com/ideas/wp-content/uploads/2016/08/50-happy-birthday-quotes-thumb.jpg",
+      participants: ["You"],
+      isPublic: true
+    })
 
-    createEvent = () => {
-      const newEventId = firebase.firestore().collection("events").doc().id
+    // firebase.firestore().doc("chats/events/" + newEventId).add({
+    //   text: "Event created",
+    //   uid: "exampleID",
+    //   timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+    // })
+  }
 
-      firebase.firestore().doc("events/" + newEventId).set({
-        name: this.state.title,
-        date: this.state.date,
-        time: this.state.time,
-        address: this.state.address,
-        notifications: this.state.notificationSwitchValue,
-        picture: "https://www.shutterfly.com/ideas/wp-content/uploads/2016/08/50-happy-birthday-quotes-thumb.jpg",
-        participants: ["OJ, Nico, Nora, Martin"],
-        isPublic: true
-      })
-
-      // firebase.firestore().doc("chats/events/" + newEventId).add({
-      //   text: "Event created",
-      //   uid: "exampleID",
-      //   timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-      // })
-    }
-
-    render() {
-      return (
+  render() {
+    return (
         <View style={styles.container}>
           <View style={styles.header}>
-            <Text style={styles.headerText}>{this.state.title}</Text>
+            <Text style={styles.headerText}>DITT NYE EVENT!!!</Text>
           </View>
           <View style={styles.informationAreaContainer}>
 
             <View style={styles.infoContainer}>
               <Text style={styles.optionsItemLeft}>Event name:</Text>
               <TextInput
-                placeholder="name your event"
-                onChangeText={title => this.setState({ title })}
-                value={this.state.title}
+                  placeholder="name your event"
+                  onChangeText={title => this.setState({ title })}
+                  value={this.state.title}
               />
             </View>
             <View style={styles.infoContainer}>
@@ -83,9 +78,9 @@ export default class EventScreen extends React.Component {
             <View style={styles.infoContainer}>
               <Text style={styles.optionsItemLeft}>Address:</Text>
               <TextInput
-                onChangeText={address => this.setState({ address })}
-                value={this.state.address}
-                placeholder={"The adress of your event"}
+                  onChangeText={address => this.setState({ address })}
+                  value={this.state.address}
+                  placeholder={"The adress of your event"}
               />
             </View>
             <View style={styles.infoContainer}>
@@ -94,25 +89,27 @@ export default class EventScreen extends React.Component {
             <View style={styles.infoContainer}>
               <Text style={styles.optionsItemLeft}>Varslingar:</Text>
               <Switch
-                style={styles.optionsItemRight}
-                onValueChange={this.toggleSwitch}
-                value={this.state.notificationSwitchValue}
+                  style={styles.optionsItemRight}
+                  onValueChange={this.toggleSwitch}
+                  value={this.state.notificationSwitchValue}
               />
             </View>
             <View style={styles.infoContainer}>
               <Text style={styles.optionsItemLeft}>Inviter flere deltakere</Text>
             </View>
-
+            <View style={styles.buttonArea}>
+              <TouchableOpacity
+                  onPress={this.createEvent}
+                  style={styles.createEventButton}
+              >
+                <Text style={styles.buttonText}> CHAT </Text>
+              </TouchableOpacity>
+            </View>
           </View>
-          <TouchableOpacity
-              onPress={this.createEvent}
-              style={styles.createEventButton}
-          >
-            <Text> Touch Here </Text>
-          </TouchableOpacity>
+
         </View>
-      )
-    }
+    )
+  }
 }
 
 const styles = StyleSheet.create({
@@ -139,7 +136,7 @@ const styles = StyleSheet.create({
   },
   informationAreaContainer: {
     backgroundColor: "#FFF",
-    flex: 3,
+    flex: 5,
   },
   infoContainer: {
     flexDirection: "row",
@@ -157,9 +154,19 @@ const styles = StyleSheet.create({
   optionsItemRight: {
     marginRight: 5,
   },
+  buttonArea: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
   createEventButton: {
     width: "50%",
+    height: 75,
     backgroundColor: "grey",
     alignItems: 'center',
+    justifyContent: 'center'
+  },
+  buttonText: {
+    color: "white"
   }
 })

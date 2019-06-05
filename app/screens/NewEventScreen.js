@@ -25,7 +25,8 @@ export default class NewEventScreen extends React.Component {
     }
 
     createEvent = () => {
-      const newEventId = firebase.firestore().collection("events").doc().id
+      const newEventId = firebase.firestore().collection("events").doc().id;
+      this.props.navigation.navigate("Event");
 
       firebase.firestore().doc("events/" + newEventId).set({
         name: this.state.title,
@@ -34,7 +35,7 @@ export default class NewEventScreen extends React.Component {
         address: this.state.address,
         notifications: this.state.notificationSwitchValue,
         picture: "https://www.shutterfly.com/ideas/wp-content/uploads/2016/08/50-happy-birthday-quotes-thumb.jpg",
-        participants: ["OJ", "Nico", "Nora", "Martin"],
+        participants: ["You"],
         isPublic: true
       })
 
@@ -96,14 +97,16 @@ export default class NewEventScreen extends React.Component {
             <View style={styles.infoContainer}>
               <Text style={styles.optionsItemLeft}>Inviter flere deltakere</Text>
             </View>
-
+            <View style={styles.buttonArea}>
+              <TouchableOpacity
+                  onPress={this.createEvent}
+                  style={styles.createEventButton}
+              >
+                <Text style={styles.buttonText}> Create Event! </Text>
+              </TouchableOpacity>
+            </View>
           </View>
-          <TouchableOpacity
-              onPress={this.createEvent}
-              style={styles.createEventButton}
-          >
-            <Text> Touch Here </Text>
-          </TouchableOpacity>
+
         </View>
       )
     }
@@ -133,7 +136,7 @@ const styles = StyleSheet.create({
   },
   informationAreaContainer: {
     backgroundColor: "#FFF",
-    flex: 3,
+    flex: 5,
   },
   infoContainer: {
     flexDirection: "row",
@@ -151,10 +154,19 @@ const styles = StyleSheet.create({
   optionsItemRight: {
     marginRight: 5,
   },
+  buttonArea: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
   createEventButton: {
     width: "50%",
+    height: 75,
     backgroundColor: "grey",
     alignItems: 'center',
     justifyContent: 'center'
+  },
+  buttonText: {
+    color: "white"
   }
 })
