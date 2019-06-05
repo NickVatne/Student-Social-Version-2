@@ -4,90 +4,85 @@ import {
   View,
   TouchableOpacity,
   Image, Text,
+  SafeAreaView,
 } from "react-native"
 
-export default class ChooseSchool extends React.Component {
+export default class SchoolScreen extends React.Component {
+
+  static navigationOptions = {
+    title: "Home",
+  }
+
   render() {
     return (
-      <View style={styles.container}>
-        <View style={styles.header}>
-          <Text style={styles.SchoolName}>Schools</Text>
-        </View>
+      <SafeAreaView style={styles.container}>
         <TouchableOpacity
           onPress={() => this.props.navigation.navigate("ChatNav")}
         >
           <Image style={styles.hkStor} source={require("../imgs/hk.png")} />
         </TouchableOpacity>
         <Text style={styles.velg}>Velg Skole:</Text>
+
         <View style={styles.interesser1}>
           <TouchableOpacity
-            style={styles.foto}
+            style={styles.school1}
             onPress={() => this.props.navigation.navigate("ChatNav")}
           >
-            <Image style={styles.hkLiten} source={require("../imgs/hk.png")} />
+            <Image style={styles.schoolLogo} source={require("../imgs/hk.png")} />
             <Text style={styles.text}>HK</Text>
 
           </TouchableOpacity>
           <TouchableOpacity
-            style={styles.foto2}
+            style={styles.school2}
             onPress={() => this.props.navigation.navigate("ChatNav")}
           >
-            <Image style={styles.bi} source={require("../imgs/bi.png")} />
+            <Image style={styles.schoolLogo} source={require("../imgs/bi.png")} />
             <Text style={styles.text}>BI</Text>
 
           </TouchableOpacity>
           <TouchableOpacity
-            style={styles.foto3}
+            style={styles.school3}
             onPress={() => this.props.navigation.navigate("ChatNav")}
           >
-            <Image style={styles.hkLiten} source={require("../imgs/osloMet.png")} />
+            <Image style={styles.schoolLogo} source={require("../imgs/osloMet.png")} />
             <Text style={styles.text}>Oslo Met</Text>
 
           </TouchableOpacity>
         </View>
         <View style={styles.interesser2}>
+
           <TouchableOpacity
-            style={styles.foto4}
+            style={styles.school4}
             onPress={() => this.props.navigation.navigate("ChatNav")}
           >
-            <Image style={styles.hkLiten} source={require("../imgs/uio.png")} />
+            <Image style={styles.schoolLogo} source={require("../imgs/uio.png")} />
             <Text style={styles.text}>UiO</Text>
 
           </TouchableOpacity>
           <TouchableOpacity
-            style={styles.foto5}
+            style={styles.school5}
             onPress={() => this.props.navigation.navigate("ChatNav")}
           >
-            <Image style={styles.hkLiten} source={require("../imgs/sonans.png")} />
+            <Image style={styles.schoolLogo} source={require("../imgs/sonans.png")} />
             <Text style={styles.text}>Sonans</Text>
 
           </TouchableOpacity>
           <TouchableOpacity
-            style={styles.foto6}
+            style={styles.school6}
             onPress={() => this.props.navigation.navigate("ChatNav")}
           >
-            <Image style={styles.hkLiten} source={require("../imgs/bjorknes.png")} />
+            <Image style={styles.schoolLogo} source={require("../imgs/bjorknes.png")} />
             <Text style={styles.text}>Bjørknes</Text>
           </TouchableOpacity>
         </View>
-      </View>
+      </SafeAreaView>
     )
   }
 }
 
 const styles = StyleSheet.create({
   container: {
-  },
-  SchoolName: {
-    fontSize: 22,
-    color: "#FFFFFF",
-    marginTop: 20,
-    textAlign: "center",
-
-  },
-  header: {
-    backgroundColor: "#2D4452",
-    height: 60,
+    flex: 1,
   },
   hkStor: {
     width: 260,
@@ -100,27 +95,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     backgroundColor: "white",
   },
-  hkLiten: {
-    width: 90,
-    height: 90,
-    borderRadius: 45,
-    borderWidth: 4,
-    borderColor: "#2D4452",
-    alignSelf: "center",
-    position: "absolute",
-    backgroundColor: "white",
-  },
-  bi: {
-    width: 90,
-    height: 90,
-    borderRadius: 45,
-    borderWidth: 4,
-    borderColor: "#2D4452",
-    alignSelf: "center",
-    position: "absolute",
-    backgroundColor: "white",
-  },
-  osloMet: {
+  schoolLogo: {
     width: 90,
     height: 90,
     borderRadius: 45,
@@ -141,67 +116,59 @@ const styles = StyleSheet.create({
     top: 320,
     flex: 1,
     flexDirection: "row",
-    left: 7,
+    justifyContent: "space-evenly",
   },
   interesser2: {
-    top: 440,
+    top: 120,
     flex: 1,
     flexDirection: "row",
-    left: 7,
+    justifyContent: "space-evenly",
+
   },
-  foto: {
+  school1: {
     height: 90,
-    left: 25,
     alignItems: "center",
     marginBottom: 20,
     width: 90,
     borderRadius: 60,
     backgroundColor: "#d8d8d8",
   },
-  foto2: {
+  school2: {
     height: 90,
-    left: 50,
     alignItems: "center",
     marginBottom: 20,
     width: 90,
     borderRadius: 60,
     backgroundColor: "#d8d8d8",
   },
-  foto3: {
+  school3: {
     height: 90,
-    left: 75,
     alignItems: "center",
     marginBottom: 20,
     width: 90,
     borderRadius: 60,
     backgroundColor: "#d8d8d8",
   },
-  foto4: {
+  school4: {
     height: 90,
-    left: 25,
     alignItems: "center",
     marginBottom: 20,
     width: 90,
     borderRadius: 60,
-    backgroundColor: "#d8d8d8",
   },
-  foto5: {
+  school5: {
     height: 90,
-    left: 50,
     alignItems: "center",
     marginBottom: 20,
     width: 90,
     borderRadius: 60,
-    backgroundColor: "#d8d8d8",
   },
-  foto6: {
+  school6: {
     height: 90,
-    left: 75,
     alignItems: "center",
     marginBottom: 20,
     width: 90,
     borderRadius: 60,
-    backgroundColor: "#d8d8d8",
   },
   text: {
     fontSize: 16,

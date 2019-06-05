@@ -7,7 +7,7 @@ import DatePick from "../components/DatePick"
 import TimePick from "../components/TimePick"
 
 
-export default class NewEventScreen extends React.Component {
+export default class EventScreen extends React.Component {
   constructor(props) {
     super(props)
 
@@ -19,6 +19,12 @@ export default class NewEventScreen extends React.Component {
       notificationSwitchValue: false,
     }
   }
+
+    static navigationOptions = {
+      header: null,
+      title: "Home",
+    }
+
 
     toggleSwitch = value => {
       this.setState({ notificationSwitchValue: value })
@@ -34,7 +40,7 @@ export default class NewEventScreen extends React.Component {
         address: this.state.address,
         notifications: this.state.notificationSwitchValue,
         picture: "https://www.shutterfly.com/ideas/wp-content/uploads/2016/08/50-happy-birthday-quotes-thumb.jpg",
-        participants: ["OJ", "Nico", "Nora", "Martin"],
+        participants: ["OJ, Nico, Nora, Martin"],
         isPublic: true
       })
 
@@ -155,6 +161,5 @@ const styles = StyleSheet.create({
     width: "50%",
     backgroundColor: "grey",
     alignItems: 'center',
-    justifyContent: 'center'
   }
 })

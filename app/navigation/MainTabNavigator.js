@@ -7,7 +7,7 @@ import HomeScreen from "../screens/HomeScreen"
 import ProfileScreen from "../screens/ProfileScreen"
 import ProfileEdit from "../screens/ProfileEdit"
 import NewEventScreen from "../screens/NewEventScreen"
-import ChooseSchool from "../screens/ChooseSchool"
+import SchoolScreen from "../screens/SchoolScreen"
 
 import FriendResults from "../screens/FriendResults" // Shows people with same interests
 
@@ -84,37 +84,48 @@ const ChatStack = createStackNavigator({
   },
 })
 
-const School = {
-  screen: ChooseSchool,
-  navigationOptions: {
-    title: "School",
+
+const SchoolStack = createStackNavigator({
+  School: {
+    screen: SchoolScreen,
+    navigationOptions: {
+      title: "School",
+    },
+  },
+}, { navigationOptions: {
     tabBarLabel: "School",
-    tabBarIcon: ({ focused }) => (
-      <TabBarIcon
-        focused={focused}
-        name={
-          Platform.OS === "ios"
-            ? `ios-school${focused ? "" : "-outline"}`
-            : "md-school"
-        }
-      />
+        tabBarIcon: ({ focused }) => (
+        <TabBarIcon
+            focused={focused}
+            name={
+              Platform.OS === "ios"
+                  ? `ios-school${focused ? "" : "-outline"}`
+                  : "md-school"
+            }
+        />
     ),
   },
-}
+})
 
-const NewEvent = {
+
+const NewEventStack = createStackNavigator( {
+  NewEvent: {
   screen: NewEventScreen,
   navigationOptions: {
-    title: "New event",
+    title: "New Event",
+
+    },
+  },
+}, { navigationOptions: {
     tabBarLabel: "New Event",
     tabBarIcon: ({ focused }) => (
-      <TabBarIcon
-        focused={focused}
-        name={Platform.OS === "ios" ? "ios-add" : "md-add"}
-      />
+        <TabBarIcon
+            focused={focused}
+            name={Platform.OS === "ios" ? "ios-add" : "md-add"}
+        />
     ),
   },
-}
+})
 
 const ProfileStack = createStackNavigator({
   Profile: {
@@ -144,7 +155,7 @@ const ProfileStack = createStackNavigator({
 export default createBottomTabNavigator({
   HomeStack,
   ChatStack,
+  NewEventStack,
   ProfileStack,
-  NewEvent,
-  School,
+  SchoolStack,
 })
