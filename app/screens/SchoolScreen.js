@@ -106,20 +106,20 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
   },
   velg: {
-    top: 300,
+    top: 310,
     fontSize: 22,
     color: "black",
     fontWeight: "400",
     textAlign: "center",
   },
   interesser1: {
-    top: 320,
+    top: 330,
     flex: 1,
     flexDirection: "row",
     justifyContent: "space-evenly",
   },
   interesser2: {
-    top: 120,
+    top: 150,
     flex: 1,
     flexDirection: "row",
     justifyContent: "space-evenly",
@@ -131,7 +131,6 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     width: 90,
     borderRadius: 60,
-    backgroundColor: "#d8d8d8",
   },
   school2: {
     height: 90,
@@ -139,7 +138,6 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     width: 90,
     borderRadius: 60,
-    backgroundColor: "#d8d8d8",
   },
   school3: {
     height: 90,
@@ -147,7 +145,6 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     width: 90,
     borderRadius: 60,
-    backgroundColor: "#d8d8d8",
   },
   school4: {
     height: 90,
