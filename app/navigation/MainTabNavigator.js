@@ -87,7 +87,7 @@ const ChatStack = createStackNavigator({
 const School = {
   screen: ChooseSchool,
   navigationOptions: {
-    title: "School",
+    title: "Choose School",
     tabBarLabel: "School",
     tabBarIcon: ({ focused }) => (
       <TabBarIcon
