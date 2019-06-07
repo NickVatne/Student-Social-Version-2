@@ -39,12 +39,12 @@ export default class NewEventScreen extends React.Component {
         isPublic: true
       })
 
-      // firebase.firestore().doc("chats/events/" + newEventId).add({
-      //   text: "Event created",
-      //   uid: "exampleID",
-      //   timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-      // })
-    }
+    //   firebase.firestore().doc("events/" + newEventId).add({
+    //     text: "Event created",
+    //     uid: "exampleID",
+    //     timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+    //   })
+  }
 
     render() {
       return (
@@ -114,12 +114,12 @@ export default class NewEventScreen extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#fff",
+    backgroundColor: "#ecf1f4",
     flex: 1,
   },
   header: {
     alignSelf: "stretch",
-    backgroundColor: "#455A64",
+    backgroundColor: "#2D4352",
     alignItems: "center",
     justifyContent: "center",
     borderBottomWidth: 1,
@@ -135,10 +135,12 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   informationAreaContainer: {
-    backgroundColor: "#FFF",
+    backgroundColor: "#ecf1f4",
+    padding: 5,
     flex: 5,
   },
   infoContainer: {
+    backgroundColor: "#FFF",
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
@@ -149,7 +151,6 @@ const styles = StyleSheet.create({
   },
   optionsItemLeft: {
     marginLeft: 5,
-
   },
   optionsItemRight: {
     marginRight: 5,
@@ -160,13 +161,15 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   },
   createEventButton: {
-    width: "50%",
-    height: 75,
-    backgroundColor: "grey",
+    width: "75%",
+    height: 125,
+    backgroundColor: "#2D4352",
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    borderRadius:10,
   },
   buttonText: {
-    color: "white"
+    color: "white",
+    fontSize: 20,
   }
 })

@@ -72,12 +72,12 @@ export default class EventScreen extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#fff",
+    backgroundColor: "#ecf1f4",
     flex: 1,
   },
   header: {
     alignSelf: "stretch",
-    backgroundColor: "#455A64",
+    backgroundColor: "#2D4352",
     alignItems: "center",
     justifyContent: "center",
     borderBottomWidth: 1,
@@ -93,11 +93,12 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   informationAreaContainer: {
-    backgroundColor: "#FFF",
+    backgroundColor: "#ecf1f4",
     flex: 5,
   },
   infoContainer: {
     flexDirection: "row",
+    backgroundColor: "#FFF",
     justifyContent: "space-between",
     alignItems: "center",
     height: 45,
@@ -118,13 +119,15 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   },
   createEventButton: {
-    width: "50%",
-    height: 75,
-    backgroundColor: "grey",
+    width: "75%",
+    height: 125,
+    backgroundColor: "#2D4352",
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    borderRadius:10,
   },
   buttonText: {
-    color: "white"
+    color: "white",
+    fontSize: 20,
   }
 })

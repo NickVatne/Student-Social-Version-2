@@ -5,7 +5,6 @@ import DatePicker from "react-native-datepicker"
 export default class DatePick extends Component {
   constructor(props) {
     super(props)
-    // set value in state for initial date
     this.state = { time: "20:00" }
   }
 
@@ -15,8 +14,7 @@ export default class DatePick extends Component {
 
         <DatePicker
           style={{ width: 200 }}
-          date={this.state.time} // initial date from state
-          // The enum of date, datetime and time
+          date={this.state.time}
           mode="time"
           format="HH:mm"
           showIcon={false}
