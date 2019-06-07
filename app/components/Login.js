@@ -14,12 +14,14 @@ export default class Login extends Component {
   login = async () => {
     try {
       console.log("Logging in with username: " + this.state.username + " and password " + this.state.password)
-      await firebase.auth().signInWithEmailAndPassword(this.state.username + "@studentsocial.com", this.state.password)
+      await firebase.auth()
+        .signInWithEmailAndPassword(this.state.username + "@studentsocial.com", this.state.password)
       console.log("Successfully logged in")
     } catch (err) {
       try {
         console.log("Account not found, trying to create user")
-        await firebase.auth().createUserWithEmailAndPassword(this.state.username + "@studentsocial.com", this.state.password)
+        await firebase.auth()
+          .createUserWithEmailAndPassword(this.state.username + "@studentsocial.com", this.state.password)
       } catch (err2) {
         console.log("Failed to create user")
         Alert.alert("Failed to log in", err2.code + ": " + err2.message)
@@ -31,7 +33,7 @@ export default class Login extends Component {
     return (
       <SafeAreaView style={styles.container}>
         <View style={styles.content}>
-          <Image source={BANNER} style={styles.logoImage} />
+          <Image source={BANNER} style={styles.logoImage}/>
           <Text style={styles.logo}>Student.Social</Text>
 
 
@@ -40,7 +42,7 @@ export default class Login extends Component {
             style={styles.inputContainer}
             placeholder="username"
             placeholderTextColor="#ffffff"
-           // defaultValue={this.state.username}
+            // defaultValue={this.state.username}
             onChangeText={username => this.setState({ username })}
           />
 
@@ -50,7 +52,7 @@ export default class Login extends Component {
             style={styles.inputContainer}
             placeholder="password"
             placeholderTextColor="#ffffff"
-           // defaultValue={this.state.password}
+            // defaultValue={this.state.password}
             onChangeText={password => this.setState({ password })}
           />
 
@@ -108,7 +110,10 @@ const styles = StyleSheet.create({
     fontSize: 39,
     fontWeight: "bold",
     textShadowColor: "#252525",
-    textShadowOffset: { width: 2, height: 2 },
+    textShadowOffset: {
+      width: 2,
+      height: 2,
+    },
     textShadowRadius: 8,
     marginBottom: 15,
     padding: 20,
@@ -124,9 +129,7 @@ const styles = StyleSheet.create({
     marginVertical: 10,
 
   },
-  input: {
-
-  },
+  input: {},
   buttonContainer: {
     width: 300,
     margin: 21,

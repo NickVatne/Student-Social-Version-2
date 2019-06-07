@@ -34,8 +34,8 @@ export default class NewEventScreen extends React.Component {
         time: this.state.time,
         address: this.state.address,
         notifications: this.state.notificationSwitchValue,
-        picture: "https://www.shutterfly.com/ideas/wp-content/uploads/2016/08/50-happy-birthday-quotes-thumb.jpg",
-        participants: ["You"],
+       // picture: "https://www.shutterfly.com/ideas/wp-content/uploads/2016/08/50-happy-birthday-quotes-thumb.jpg",
+        participants: ["You, Michael, Nora, Nicolai"],
         isPublic: true
       })
 

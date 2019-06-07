@@ -1,71 +1,70 @@
 import React from "react"
-import { StyleSheet, Text, View, TextInput, Switch, TouchableOpacity } from "react-native"
+import { StyleSheet, Text, View, TouchableOpacity } from "react-native"
 
 import firebase from "@modules/Firebase"
 
 import DatePick from "../components/DatePick"
 import TimePick from "../components/TimePick"
 
-
+import NewEventScreen from "./NewEventScreen"
 
 
 export default class EventScreen extends React.Component {
+
   constructor(props) {
     super(props)
     this.state = {
-      title: "",
-      date: "",
-      time: "",
-      address: "",
-      notificationSwitchValue: false,
+      title: NewEventScreen.state.title,
+      date: NewEventScreen.state.date,
+      time: NewEventScreen.state.time,
+      address: NewEventScreen.state.address,
+      notificationSwitchValue: NewEventScreen.state.notificationSwitchValue,
     }
   }
 
-
-
   render() {
     return (
-        <View style={styles.container}>
-          <View style={styles.header}>
-            <Text style={styles.headerText}>DITT NYE EVENT!!!</Text>
-          </View>
-          <View style={styles.informationAreaContainer}>
+      <View style={styles.container}>
+        <View style={styles.header}>
+          <Text style={styles.headerText}>{this.state.title}</Text>
+        </View>
+        <View style={styles.informationAreaContainer}>
 
-            <View style={styles.infoContainer}>
-              <Text style={styles.optionsItemLeft}>Event name:</Text>
-              <Text>Eventnavn</Text>
-            </View>
-            <View style={styles.infoContainer}>
-              <Text style={styles.optionsItemLeft}>Date:</Text>
-              <Text>20.06.2019</Text>
-            </View>
-            <View style={styles.infoContainer}>
-              <Text style={styles.optionsItemLeft}>Time:</Text>
-              <Text>20:00</Text>
-            </View>
-            <View style={styles.infoContainer}>
-              <Text style={styles.optionsItemLeft}>Address:</Text>
-              <Text>Addressen til eventet</Text>
-            </View>
-            <View style={styles.infoContainer}>
-              <Text style={styles.optionsItemLeft}>Fargekode: </Text>
-            </View>
-            <View style={styles.infoContainer}>
-              <Text style={styles.optionsItemLeft}>Varslingar:</Text>
-            </View>
-            <View style={styles.infoContainer}>
-              <Text style={styles.optionsItemLeft}>Inviter flere deltakere</Text>
-            </View>
-            <View style={styles.buttonArea}>
-              <TouchableOpacity
-                  onPress={this.createEvent}
-                  style={styles.createEventButton}
-              >
-                <Text style={styles.buttonText}> CHAT </Text>
-              </TouchableOpacity>
-            </View>
+          <View style={styles.infoContainer}>
+            <Text style={styles.optionsItemLeft}>Event name:</Text>
+            <Text>{this.state.title}</Text>
+          </View>
+          <View style={styles.infoContainer}>
+            <Text style={styles.optionsItemLeft}>Date:</Text>
+            <Text>{this.state.date}</Text>
+          </View>
+          <View style={styles.infoContainer}>
+            <Text style={styles.optionsItemLeft}>Time:</Text>
+            <Text>{this.state.time}</Text>
+          </View>
+          <View style={styles.infoContainer}>
+            <Text style={styles.optionsItemLeft}>Address:</Text>
+            <Text>{this.state.address}</Text>
+          </View>
+          <View style={styles.infoContainer}>
+            <Text style={styles.optionsItemLeft}>Fargekode: </Text>
+          </View>
+          <View style={styles.infoContainer}>
+            <Text style={styles.optionsItemLeft}>Notifications:</Text>
+          </View>
+          <View style={styles.infoContainer}>
+            <Text style={styles.optionsItemLeft}>Inviter flere deltakere</Text>
+          </View>
+          <View style={styles.buttonArea}>
+            <TouchableOpacity
+              onPress={this.createEvent}
+              style={styles.createEventButton}
+            >
+              <Text style={styles.buttonText}> CHAT </Text>
+            </TouchableOpacity>
           </View>
         </View>
+      </View>
     )
   }
 }
@@ -115,19 +114,19 @@ const styles = StyleSheet.create({
   },
   buttonArea: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center'
+    alignItems: "center",
+    justifyContent: "center",
   },
   createEventButton: {
     width: "75%",
     height: 125,
     backgroundColor: "#2D4352",
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderRadius:10,
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: 10,
   },
   buttonText: {
     color: "white",
     fontSize: 20,
-  }
+  },
 })
