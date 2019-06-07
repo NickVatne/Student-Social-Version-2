@@ -61,7 +61,7 @@ export default class Chat extends React.Component {
             onPress={this.send}
           >
             <View style={styles.submitContainer}>
-              <Text style={styles.submitText}>Submit</Text>
+              <Text style={styles.submitText}>Send</Text>
             </View>
           </TouchableHighlight>
         </View>
@@ -81,19 +81,21 @@ const styles = StyleSheet.create({
 
   input: {
     flex: 1,
-    backgroundColor: "lightgray",
+    backgroundColor: "#F1F0F0",
+    paddingLeft: 20,
+    borderRadius: 10,
   },
 
   submitContainer: {
-    height: 70,
-    width: 120,
-    backgroundColor: "red",
+    height: 50,
+    width: 100,
+    backgroundColor: "#0099FF",
     justifyContent: "center",
+    borderRadius: 60,
     alignItems: "center",
   },
-
   submitText: {
-    color: "blue",
+    color: "white",
     fontSize: 24,
   },
 })
