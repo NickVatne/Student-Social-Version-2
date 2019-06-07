@@ -12,7 +12,8 @@ import SchoolScreen from "../screens/SchoolScreen"
 import FriendResults from "../screens/FriendResults" // Shows people with same interests
 
 import ChatMain from "../screens/ChatMain" // Chatroom picker screen
-import Chat from "../screens/Chat/Chat" // Actual chatroom screen
+import Chat from "../screens/Chat/Chat"
+import EventScreen from "../screens/EventScreen"; // Actual chatroom screen
 
 const HomeStack = createStackNavigator({
   Home: {
@@ -113,7 +114,12 @@ const NewEventStack = createStackNavigator( {
   screen: NewEventScreen,
   navigationOptions: {
     title: "New Event",
-
+    },
+  },
+  Event: {
+    screen: EventScreen,
+    navigationOptions: {
+      title: "Event",
     },
   },
 }, { navigationOptions: {
