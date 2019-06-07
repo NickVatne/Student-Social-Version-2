@@ -33,32 +33,19 @@ export default class EventScreen extends React.Component {
 
             <View style={styles.infoContainer}>
               <Text style={styles.optionsItemLeft}>Event name:</Text>
-              <TextInput
-                  placeholder="name your event"
-                  onChangeText={title => this.setState({ title })}
-                  value={this.state.title}
-              />
+              <Text>Eventnavn</Text>
             </View>
             <View style={styles.infoContainer}>
-              <Text style={styles.optionsItemLeft}>Pick date:</Text>
-              <DatePick mode="date"
-                        onDateChange={date => this.setState({ date })}
-                        value={this.state.date}
-              />
+              <Text style={styles.optionsItemLeft}>Date:</Text>
+              <Text>20.06.2019</Text>
             </View>
             <View style={styles.infoContainer}>
               <Text style={styles.optionsItemLeft}>Time:</Text>
-              <TimePick onDateChange={time => this.setState({ time })}
-                        value={this.state.time}
-              />
+              <Text>20:00</Text>
             </View>
             <View style={styles.infoContainer}>
               <Text style={styles.optionsItemLeft}>Address:</Text>
-              <TextInput
-                  onChangeText={address => this.setState({ address })}
-                  value={this.state.address}
-                  placeholder={"The adress of your event"}
-              />
+              <Text>Addressen til eventet</Text>
             </View>
             <View style={styles.infoContainer}>
               <Text style={styles.optionsItemLeft}>Fargekode: </Text>
@@ -78,7 +65,6 @@ export default class EventScreen extends React.Component {
               </TouchableOpacity>
             </View>
           </View>
-
         </View>
     )
   }

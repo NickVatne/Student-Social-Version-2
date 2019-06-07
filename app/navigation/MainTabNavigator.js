@@ -75,11 +75,7 @@ const ChatStack = createStackNavigator({
     tabBarIcon: ({ focused }) => (
       <TabBarIcon
         focused={focused}
-        name={
-          Platform.OS === "ios"
-            ? `ios-chatbubbles${focused ? "" : "-outline"}`
-            : "md-chatbubbles"
-        }
+        name={Platform.OS === "ios" ? "ios-chatbubbles" : "md-chatbubbles"}
       />
     ),
   },
@@ -100,8 +96,7 @@ const SchoolStack = createStackNavigator({
             focused={focused}
             name={
               Platform.OS === "ios"
-                  ? `ios-school${focused ? "" : "-outline"}`
-                  : "md-school"
+                  ? "ios-school" : "md-school"
             }
         />
     ),
