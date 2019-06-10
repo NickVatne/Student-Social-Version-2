@@ -1,83 +1,70 @@
 import React from "react"
-import {
-  StyleSheet,
-  View,
-  TouchableOpacity,
-  Image, Text,
-  SafeAreaView,
-} from "react-native"
+import { Image, SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from "react-native"
 
-export default class SchoolScreen extends React.Component {
+export default function SchoolScreen(props) {
+  return (
+    <SafeAreaView style={styles.container}>
+      <TouchableOpacity
+        onPress={() => props.navigation.navigate("ChatNav")}
+      >
+        <Image style={styles.hkStor} source={require("../imgs/hk.png")}/>
+      </TouchableOpacity>
+      <Text style={styles.velg}>Choose School:</Text>
 
-  static navigationOptions = {
-    title: "Home",
-  }
-
-  render() {
-    return (
-      <SafeAreaView style={styles.container}>
+      <View style={styles.interesser1}>
         <TouchableOpacity
-          onPress={() => this.props.navigation.navigate("ChatNav")}
+          style={styles.school1}
+          onPress={() => props.navigation.navigate("SchoolPicker")}
         >
-          <Image style={styles.hkStor} source={require("../imgs/hk.png")} />
+          <Image style={styles.schoolLogo} source={require("../imgs/hk.png")}/>
+          <Text style={styles.text}>HK</Text>
+
         </TouchableOpacity>
-        <Text style={styles.velg}>Choose School:</Text>
+        <TouchableOpacity
+          style={styles.school2}
+          onPress={() => props.navigation.navigate("SchoolPicker")}
+        >
+          <Image style={styles.schoolLogo} source={require("../imgs/bi.png")}/>
+          <Text style={styles.text}>BI</Text>
 
-        <View style={styles.interesser1}>
-          <TouchableOpacity
-            style={styles.school1}
-            onPress={() => this.props.navigation.navigate("ChatNav")}
-          >
-            <Image style={styles.schoolLogo} source={require("../imgs/hk.png")} />
-            <Text style={styles.text}>HK</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.school3}
+          onPress={() => props.navigation.navigate("SchoolPicker")}
+        >
+          <Image style={styles.schoolLogo} source={require("../imgs/osloMet.png")}/>
+          <Text style={styles.text}>Oslo Met</Text>
 
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={styles.school2}
-            onPress={() => this.props.navigation.navigate("ChatNav")}
-          >
-            <Image style={styles.schoolLogo} source={require("../imgs/bi.png")} />
-            <Text style={styles.text}>BI</Text>
+        </TouchableOpacity>
+      </View>
+      <View style={styles.interesser2}>
 
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={styles.school3}
-            onPress={() => this.props.navigation.navigate("ChatNav")}
-          >
-            <Image style={styles.schoolLogo} source={require("../imgs/osloMet.png")} />
-            <Text style={styles.text}>Oslo Met</Text>
+        <TouchableOpacity
+          style={styles.school4}
+          onPress={() => props.navigation.navigate("SchoolPicker")}
+        >
+          <Image style={styles.schoolLogo} source={require("../imgs/uio.png")}/>
+          <Text style={styles.text}>UiO</Text>
 
-          </TouchableOpacity>
-        </View>
-        <View style={styles.interesser2}>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.school5}
+          onPress={() => props.navigation.navigate("SchoolPicker")}
+        >
+          <Image style={styles.schoolLogo} source={require("../imgs/sonans.png")}/>
+          <Text style={styles.text}>Sonans</Text>
 
-          <TouchableOpacity
-            style={styles.school4}
-            onPress={() => this.props.navigation.navigate("ChatNav")}
-          >
-            <Image style={styles.schoolLogo} source={require("../imgs/uio.png")} />
-            <Text style={styles.text}>UiO</Text>
-
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={styles.school5}
-            onPress={() => this.props.navigation.navigate("ChatNav")}
-          >
-            <Image style={styles.schoolLogo} source={require("../imgs/sonans.png")} />
-            <Text style={styles.text}>Sonans</Text>
-
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={styles.school6}
-            onPress={() => this.props.navigation.navigate("ChatNav")}
-          >
-            <Image style={styles.schoolLogo} source={require("../imgs/bjorknes.png")} />
-            <Text style={styles.text}>Bjørknes</Text>
-          </TouchableOpacity>
-        </View>
-      </SafeAreaView>
-    )
-  }
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.school6}
+          onPress={() => props.navigation.navigate("SchoolPicker")}
+        >
+          <Image style={styles.schoolLogo} source={require("../imgs/bjorknes.png")}/>
+          <Text style={styles.text}>Bjørknes</Text>
+        </TouchableOpacity>
+      </View>
+    </SafeAreaView>
+  )
 }
 
 const styles = StyleSheet.create({

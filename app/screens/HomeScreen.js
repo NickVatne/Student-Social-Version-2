@@ -9,16 +9,11 @@ import {
 import firebase from "@modules/Firebase"
 
 import BigButton from "../components/BigButton"
-import EventItem from "../components/EventItem"
 
 import List from "../components/List"
 import Room from "../components/Room"
 
 export default class HomeScreen extends React.Component {
-  static renderSeparator = (sectionId, rowId) => <View style={styles.separator} key={rowId}/>
-  static keyExtractor = (item, index) => index.toString()
-  static renderItem = ({ item }) => <EventItem doc={item}/>
-
   state = {
     events: [],
   }
