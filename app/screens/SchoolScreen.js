@@ -21,7 +21,7 @@ export default class SchoolScreen extends React.Component {
         >
           <Image style={styles.hkStor} source={require("../imgs/hk.png")} />
         </TouchableOpacity>
-        <Text style={styles.velg}>Velg Skole:</Text>
+        <Text style={styles.velg}>Choose School:</Text>
 
         <View style={styles.interesser1}>
           <TouchableOpacity

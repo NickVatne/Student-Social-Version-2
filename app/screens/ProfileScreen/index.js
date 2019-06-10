@@ -63,7 +63,7 @@ export default class ProfileScreen extends React.Component {
             onPress={() => this.props.navigation.navigate("ChatNav")}>
             <Image source={require("../../imgs/eventProfile.png")} />
           </TouchableOpacity>
-          <Text style={styles.interesserText}>Interesser</Text>
+          <Text style={styles.interesserText}>Interest</Text>
         </View>
         <ScrollView horizontal={true} style={{ height: 130 }}>
           <View style={styles.interestsContainer}>
