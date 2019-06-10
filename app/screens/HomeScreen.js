@@ -42,7 +42,8 @@ export default class HomeScreen extends React.Component {
     component: Room,
     props: {
       doc,
-      onPress: () => this.props.navigation.navigate("HomeChat", { path: "events/" + doc.id + "/name" }),
+      // onPress: () => this.props.navigation.navigate("HomeChat", { path: "events/" + doc.id + "/name" }),
+      onPress: () => this.props.navigation.navigate("Event", { path: doc.id }),
     },
   }))
 

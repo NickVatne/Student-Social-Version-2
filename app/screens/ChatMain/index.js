@@ -18,7 +18,12 @@ export default class ChatMain extends React.Component {
     this.listener && this.listener()
   }
 
-  onPress = doc => this.props.navigation.navigate("Chat", { path: "events/" + doc.id + "/chat" })
+  onPress = doc => this.props.navigation.navigate(
+      "Event", { path: doc.id})
+
+  // onPress = doc => this.props.navigation.navigate("Chat", { path: "events/" + doc.id + "/chat" })
+  //
+
 
   getItems = () => this.state.rooms.map(doc => ({
     component: Room,

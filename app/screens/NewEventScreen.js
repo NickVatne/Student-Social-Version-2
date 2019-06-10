@@ -1,5 +1,5 @@
 import React from "react"
-import { StyleSheet, Text, View, TextInput, Switch, TouchableOpacity } from "react-native"
+import {StyleSheet, Text, View, TextInput, Switch, TouchableOpacity, Alert} from "react-native"
 
 import firebase from "@modules/Firebase"
 
@@ -24,9 +24,13 @@ export default class NewEventScreen extends React.Component {
       this.setState({ notificationSwitchValue: value })
     }
 
+    navigateHome =  () => {
+      this.props.navigation.navigate("Event")
+    }
+
     createEvent = () => {
       const newEventId = firebase.firestore().collection("events").doc().id;
-      this.props.navigation.navigate("Event");
+      //this.props.navigation.navigate("Event");
 
       firebase.firestore().doc("events/" + newEventId).set({
         name: this.state.title,
@@ -38,6 +42,15 @@ export default class NewEventScreen extends React.Component {
         participants: ["You, Michael, Nora, Nicolai"],
         isPublic: true
       })
+
+      Alert.alert(
+          'Event Created!',
+          '',
+          [
+            {text: 'OK', onPress: this.navigateHome},
+          ],
+      );
+
 
     //   firebase.firestore().doc("events/" + newEventId).add({
     //     text: "Event created",
