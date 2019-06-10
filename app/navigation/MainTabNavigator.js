@@ -14,6 +14,7 @@ import FriendResults from "../screens/FriendResults" // Shows people with same i
 import ChatMain from "../screens/ChatMain" // Chatroom picker screen
 import Chat from "../screens/Chat/Chat"
 import EventScreen from "../screens/EventScreen"; // Actual chatroom screen
+import SchoolPicker from "../screens/Schoolpicker"
 
 const HomeStack = createStackNavigator({
   Home: {
@@ -27,6 +28,12 @@ const HomeStack = createStackNavigator({
     screen: FriendResults,
     navigationOptions: {
       title: "Results",
+    },
+  },
+  SchoolPicker: {
+    screen: SchoolPicker,
+    navigationOptions: {
+      title: "Browse",
     },
   },
 

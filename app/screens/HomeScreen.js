@@ -9,16 +9,11 @@ import {
 import firebase from "@modules/Firebase"
 
 import BigButton from "../components/BigButton"
-import EventItem from "../components/EventItem"
 
 import List from "../components/List"
 import Room from "../components/Room"
 
 export default class HomeScreen extends React.Component {
-  static renderSeparator = (sectionId, rowId) => <View style={styles.separator} key={rowId}/>
-  static keyExtractor = (item, index) => index.toString()
-  static renderItem = ({ item }) => <EventItem doc={item}/>
-
   state = {
     events: [],
   }
@@ -55,7 +50,8 @@ export default class HomeScreen extends React.Component {
           <BigButton onPress={() => this.props.navigation.navigate("FriendResults")}/>
         </View>
         <View style={styles.upcoming}>
-          <Text style={{ color: "#000000", fontSize: 22, }}>Upcoming Events</Text>
+          <Text style={styles.upcomingText}>Upcoming Events</Text>
+
         </View>
         <View style={{ backgroundColor: "#d8d8d8", height: 2, marginTop: 10, marginBottom: 5, }} />
         <List data={this.getItems()} />
@@ -71,9 +67,14 @@ const styles = StyleSheet.create({
   },
 
   buttonContainer: {
-    alignItems: "center",
+    alignSelf: "center",
   },
   upcoming: {
     alignSelf: "center",
+  },
+  upcomingText: {
+    color: "#000000",
+    fontFamily: "Helvetica",
+    fontSize: 22,
   },
 })

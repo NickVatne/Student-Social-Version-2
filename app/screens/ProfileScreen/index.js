@@ -122,6 +122,7 @@ const styles = StyleSheet.create({
     marginTop: 200,
     textAlign: "center",
     fontWeight: "bold",
+    fontFamily: "Helvetica",
   },
   eventor: {
     fontSize: 22,
@@ -129,6 +130,7 @@ const styles = StyleSheet.create({
     fontWeight: "400",
     textAlign: "center",
     marginTop: -20,
+    fontFamily: "Helvetica",
   },
   merInfo: {
     marginTop: 40,
