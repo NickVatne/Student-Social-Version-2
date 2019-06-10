@@ -5,6 +5,7 @@ import { StyleSheet, TouchableOpacity, Text, Dimensions, TouchableHighlight } fr
 export default ({ onPress }) => (
   <TouchableHighlight
     style={styles.touchable}
+    underlayColor="transparent"
     onPress={onPress}
   >
     <Text style={styles.text}>Find Friends</Text>
