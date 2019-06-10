@@ -3,6 +3,7 @@ import {
   StyleSheet,
   SafeAreaView,
   View,
+  Text,
 } from "react-native"
 
 import firebase from "@modules/Firebase"
@@ -52,6 +53,10 @@ export default class HomeScreen extends React.Component {
         <View style={styles.buttonContainer}>
           <BigButton onPress={() => this.props.navigation.navigate("FriendResults")}/>
         </View>
+        <View style={styles.upcoming}>
+          <Text style={{ color: "#000000", fontSize: 22, }}>Upcoming Events</Text>
+        </View>
+        <View style={{ backgroundColor: "#d8d8d8", height: 2, marginTop: 10, marginBottom: 5, }} />
         <List data={this.getItems()} />
       </SafeAreaView>
     )
@@ -66,5 +71,8 @@ const styles = StyleSheet.create({
 
   buttonContainer: {
     alignItems: "center",
+  },
+  upcoming: {
+    alignSelf: "center",
   },
 })

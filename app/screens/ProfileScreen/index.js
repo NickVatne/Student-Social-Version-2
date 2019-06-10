@@ -87,6 +87,10 @@ const styles = StyleSheet.create({
   header: {
     backgroundColor: "#2D4452",
     height: 250,
+    shadowOffset: { width: 5, height: 5 },
+    shadowColor: "grey",
+    shadowOpacity: 1,
+    shadowRadius: 10,
   },
   hk: {
     width: 50,
