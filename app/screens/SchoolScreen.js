@@ -110,8 +110,9 @@ const styles = StyleSheet.create({
     top: 310,
     fontSize: 22,
     color: "black",
-    fontWeight: "400",
+//    fontWeight: "400",
     textAlign: "center",
+    fontFamily: "Helvetica"
   },
   interesser1: {
     top: 330,
@@ -171,5 +172,6 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 16,
     top: 92,
+    fontFamily: "Helvetica",
   },
 })

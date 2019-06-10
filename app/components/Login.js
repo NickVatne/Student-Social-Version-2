@@ -78,7 +78,7 @@ export default class Login extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#455a64",
+    backgroundColor: "#0071a4",
   },
   content: {
     alignItems: "center",

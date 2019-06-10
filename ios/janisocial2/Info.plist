@@ -56,6 +56,8 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>Ionicons.ttf</string>
+		<string>sanFran.ttf</string>
+		<string>SF-Pro-Text-Regular.ttf</string>
 	</array>
 </dict>
 </plist>

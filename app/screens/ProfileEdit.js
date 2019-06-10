@@ -41,11 +41,11 @@ export default class ProfileEdit extends React.Component {
               <View style={styles.middleHeader}>
                 <Text style={styles.generalText}>General</Text>
               </View>
-              <Text style={{ color: "#000000", marginLeft: 20, marginTop: 20, fontSize: 16 }}>Find Group</Text>
-              <Text style={{ color: "#000000", marginLeft: 20, marginTop: 20 }}>Size of find group</Text>
-              <Text style={{ color: "#2D4352", marginLeft: 280, marginTop: -18 }}>minimum 1</Text>
+              <Text style={{ color: "#000000", marginLeft: 20, marginTop: 20, fontSize: 16, fontFamily: "Helvetica", }}>Find Group</Text>
+              <Text style={{ color: "#000000", marginLeft: 20, marginTop: 20, fontFamily: "Helvetica", }}>Size of find group</Text>
+              <Text style={{ color: "#2D4352", marginLeft: 280, marginTop: -18, fontFamily: "Helvetica", }}>minimum 1</Text>
               <View style={{ backgroundColor: "#d8d8d8", height: 2, marginTop: 20 }} />
-              <Text style={{ color: "#000000", marginLeft: 20, marginTop: 20, fontSize: 16 }}>Interest</Text>
+              <Text style={{ color: "#000000", marginLeft: 20, marginTop: 20, fontSize: 16, fontFamily: "Helvetica", }}>Interest</Text>
 
               <View style={styles.interesser}>
                 <TouchableOpacity style={styles.foto}>
@@ -65,7 +65,7 @@ export default class ProfileEdit extends React.Component {
                 </TouchableOpacity>
               </View>
 
-              <Text style={{ color: "#000000", marginLeft: 20, marginTop: 20 }}>Edit:</Text>
+              <Text style={{ color: "#000000", marginLeft: 20, marginTop: 20, fontFamily: "Helvetica", }}>Edit:</Text>
               <Switch
                 style={{ transform: [{ scaleX: 0.5 }, { scaleY: 0.5 }], fontSize: 16, marginLeft: 50, marginTop: -24 }}
                 onValueChange={this.editSwitch}
@@ -74,7 +74,7 @@ export default class ProfileEdit extends React.Component {
               <View style={styles.middleHeader}>
                 <Text style={styles.generalText}>Notification</Text>
               </View>
-              <Text style={{ color: "#000000", marginLeft: 20, marginTop: 20 }}>Push notification:</Text>
+              <Text style={{ color: "#000000", marginLeft: 20, marginTop: 20, fontFamily: "Helvetica", }}>Push notification:</Text>
               <Switch
                 style={{ transform: [{ scaleX: 0.5 }, { scaleY: 0.5 }], fontSize: 16, marginLeft: 150, marginTop: -24 }}
                 onValueChange={this.toggleSwitch}
@@ -88,7 +88,7 @@ export default class ProfileEdit extends React.Component {
                 value={this.state.smsSwitchValue}
               />
               <View style={{ backgroundColor: "#d8d8d8", height: 2, marginTop: 10 }} />
-              <Text style={{ color: "#ff0000", marginLeft: 20, marginTop: 20 }}>Log out</Text>
+              <Text style={{ color: "#ff0000", marginLeft: 20, marginTop: 20, fontFamily: "Helvetica",}}>Log out</Text>
 
 
             </View>
@@ -132,12 +132,14 @@ const styles = StyleSheet.create({
     marginTop: 20,
     marginBottom: 20,
     textAlign: "center",
+    fontFamily: "Helvetica",
   },
   generalText: {
     fontSize: 16,
     color: "#000000",
     marginTop: 15,
     marginLeft: 20,
+    fontFamily: "Helvetica",
   },
   foto: {
     marginTop: 20,

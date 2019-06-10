@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
@@ -30,6 +29,9 @@
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
 		ED297163215061F000B7C4FE /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED297162215061F000B7C4FE /* JavaScriptCore.framework */; };
+		41854F01B9884A26ADF920FD /* sanFran.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 92132C104EA14057997C0BED /* sanFran.ttf */; };
+		2F19C5189AEF43E5B24D4FA8 /* sanFran.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EEEDC29D294742DCAA9059F2 /* sanFran.ttf */; };
+		E8B678E2D17B425FAE5BFBB1 /* SF-Pro-Text-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A7B672DF1D674E62B9C8D60F /* SF-Pro-Text-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -370,6 +372,9 @@
 		ADBDB91F1DFEBF0600ED6528 /* RCTBlob.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTBlob.xcodeproj; path = "../node_modules/react-native/Libraries/Blob/RCTBlob.xcodeproj"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
+		92132C104EA14057997C0BED /* sanFran.ttf */ = {isa = PBXFileReference; name = "sanFran.ttf"; path = "../app/assets/fonts/sanFran.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		EEEDC29D294742DCAA9059F2 /* sanFran.ttf */ = {isa = PBXFileReference; name = "sanFran.ttf"; path = "../assets/fonts/sanFran.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A7B672DF1D674E62B9C8D60F /* SF-Pro-Text-Regular.ttf */ = {isa = PBXFileReference; name = "SF-Pro-Text-Regular.ttf"; path = "../assets/fonts/SF-Pro-Text-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -656,6 +661,9 @@
 			isa = PBXGroup;
 			children = (
 				2ED8502257C34266AB05D03E /* Ionicons.ttf */,
+				92132C104EA14057997C0BED /* sanFran.ttf */,
+				EEEDC29D294742DCAA9059F2 /* sanFran.ttf */,
+				A7B672DF1D674E62B9C8D60F /* SF-Pro-Text-Regular.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -1112,6 +1120,9 @@
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 				00D7B3CBA6814CD38D19F939 /* Ionicons.ttf in Resources */,
+				41854F01B9884A26ADF920FD /* sanFran.ttf in Resources */,
+				2F19C5189AEF43E5B24D4FA8 /* sanFran.ttf in Resources */,
+				E8B678E2D17B425FAE5BFBB1 /* SF-Pro-Text-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

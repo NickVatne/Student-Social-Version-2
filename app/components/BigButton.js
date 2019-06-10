@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
     borderRadius: Dimensions.get("window").width * 0.7 * 0.5,
     justifyContent: "center",
     alignItems: "center",
-    elevation:4,
+    elevation: 4,
     shadowOffset: { width: 5, height: 5 },
     shadowColor: "grey",
     shadowOpacity: 1,
@@ -30,6 +30,7 @@ const styles = StyleSheet.create({
   },
   text: {
     color: "#2D4352",
-    fontSize: 20,
+    fontSize: 22,
+    fontWeight: "bold",
   },
 })

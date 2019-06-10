@@ -133,6 +133,7 @@ const styles = StyleSheet.create({
     marginTop: 23,
     alignContent: "center",
     justifyContent: "center",
+    fontFamily: "Helvetica",
   },
   informationAreaContainer: {
     backgroundColor: "#ecf1f4",
@@ -151,9 +152,11 @@ const styles = StyleSheet.create({
   },
   optionsItemLeft: {
     marginLeft: 5,
+    fontFamily: "Helvetica",
   },
   optionsItemRight: {
     marginRight: 5,
+    fontFamily: "Helvetica",
   },
   buttonArea: {
     flex: 1,
@@ -171,5 +174,6 @@ const styles = StyleSheet.create({
   buttonText: {
     color: "white",
     fontSize: 20,
+    fontFamily: "Helvetica",
   }
 })

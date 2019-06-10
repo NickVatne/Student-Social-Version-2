@@ -5,6 +5,7 @@ import {
   View,
   Text,
 } from "react-native"
+import FontAwesome, { Icons } from "react-native-fontawesome"
 
 import firebase from "@modules/Firebase"
 
@@ -54,7 +55,8 @@ export default class HomeScreen extends React.Component {
           <BigButton onPress={() => this.props.navigation.navigate("FriendResults")}/>
         </View>
         <View style={styles.upcoming}>
-          <Text style={{ color: "#000000", fontSize: 22, }}>Upcoming Events</Text>
+          <Text style={styles.upcomingText}>Upcoming Events</Text>
+
         </View>
         <View style={{ backgroundColor: "#d8d8d8", height: 2, marginTop: 10, marginBottom: 5, }} />
         <List data={this.getItems()} />
@@ -70,9 +72,14 @@ const styles = StyleSheet.create({
   },
 
   buttonContainer: {
-    alignItems: "center",
+    alignSelf: "center",
   },
   upcoming: {
     alignSelf: "center",
+  },
+  upcomingText: {
+    color: "#000000",
+    fontFamily: "Helvetica",
+    fontSize: 22,
   },
 })
