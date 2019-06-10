@@ -84,10 +84,10 @@ export default class NewEventScreen extends React.Component {
               />
             </View>
             <View style={styles.infoContainer}>
-              <Text style={styles.optionsItemLeft}>Fargekode: </Text>
+              <Text style={styles.optionsItemLeft}>Color code: </Text>
             </View>
             <View style={styles.infoContainer}>
-              <Text style={styles.optionsItemLeft}>Varslingar:</Text>
+              <Text style={styles.optionsItemLeft}>Notification:</Text>
               <Switch
                 style={styles.optionsItemRight}
                 onValueChange={this.toggleSwitch}
@@ -95,7 +95,7 @@ export default class NewEventScreen extends React.Component {
               />
             </View>
             <View style={styles.infoContainer}>
-              <Text style={styles.optionsItemLeft}>Inviter flere deltakere</Text>
+              <Text style={styles.optionsItemLeft}>Invite participants</Text>
             </View>
             <View style={styles.buttonArea}>
               <TouchableOpacity
