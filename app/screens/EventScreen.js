@@ -44,7 +44,9 @@ export default class EventScreen extends React.Component {
       if (doc.exists) {
         this.setState({ title: doc.data().name });
         this.setState({ date: doc.data().date });
+        this.setState({ time: doc.data().time });
         this.setState({ address: doc.data().address });
+        this.setState({ notifications: doc.data().notifications });
       } else {
         // doc.data() will be undefined in this case
         this.setState({ title: null });
@@ -85,6 +87,7 @@ export default class EventScreen extends React.Component {
             </View>
             <View style={styles.infoContainer}>
               <Text style={styles.optionsItemLeft}>Notifications:</Text>
+              {this.state.notifications ? <Text>On</Text> : <Text>Off</Text>}
             </View>
             <View style={styles.infoContainer}>
               <Text style={styles.optionsItemLeft}>Inviter flere deltakere</Text>

@@ -44,6 +44,14 @@ const HomeStack = createStackNavigator({
       title: navigation.getParam("userId"),
     }),
   },
+
+  // Event Screen on the home tab
+  HomeEvent: {
+    screen: EventScreen,
+    navigationOptions: {
+      title: "Event",
+    },
+  },
 }, {
   navigationOptions: {
     headerRight: ({ navigation }) => <Button title="Settings" />,
@@ -75,6 +83,14 @@ const ChatStack = createStackNavigator({
     navigationOptions: ({ navigation }) => ({
       title: navigation.getParam("userId"),
     }),
+  },
+
+  // Event Screen on the chat tab
+  ChatEvent: {
+    screen: EventScreen,
+    navigationOptions:{
+      title: "Event",
+    },
   },
 }, {
   navigationOptions: {
