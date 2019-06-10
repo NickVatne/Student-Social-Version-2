@@ -5,7 +5,6 @@ import {
   View,
   Text,
 } from "react-native"
-import FontAwesome, { Icons } from "react-native-fontawesome"
 
 import firebase from "@modules/Firebase"
 
