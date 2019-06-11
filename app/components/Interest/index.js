@@ -6,7 +6,7 @@ const DEFAULT_TEXT = "Loading..."
 
 export default props => (
   <TouchableOpacity onPress={() => props.onPress && props.onPress(props.id)}>
-    <View style={[styles.container, { backgroundColor: props.active ? "#0c7b87" : "#109aa9" }]}>
+    <View style={[styles.container, { backgroundColor: props.active ? "#0c7b87" : "#333333" }]}>
       <Image style={styles.image} source={props.uri ? { uri: props.uri } : undefined} resizeMode="contain" />
       <Text style={styles.text}>{props.text || DEFAULT_TEXT}</Text>
     </View>

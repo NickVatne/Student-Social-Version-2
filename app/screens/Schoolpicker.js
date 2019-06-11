@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { StyleSheet, View } from "react-native"
+import { SafeAreaView, StyleSheet, View } from "react-native"
 
 import List from "../components/List"
 import Room from "../components/Room"
@@ -29,6 +29,7 @@ export default class Schoolpicker extends Component {
   render() {
     return (
       <View style={styles.container}>
+        <List data={this.getItems()} />
       </View>
     )
   }
@@ -36,9 +37,7 @@ export default class Schoolpicker extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
+    padding: 10,
     backgroundColor: "#e7f4f6",
   },
 })

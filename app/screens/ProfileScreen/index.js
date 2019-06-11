@@ -1,6 +1,5 @@
-
 import React from "react"
-import {StyleSheet, SafeAreaView, View, Text, Image, TouchableOpacity, ScrollView} from "react-native"
+import { StyleSheet, SafeAreaView, View, Text, Image, TouchableOpacity, ScrollView } from "react-native"
 
 import firebase from "@modules/Firebase"
 
@@ -15,14 +14,18 @@ export default class ProfileScreen extends React.Component {
   componentDidMount() {
     console.log("User id: " + firebase.auth().currentUser.uid)
 
-    firebase.firestore().collection("interests")
+    firebase.firestore()
+      .collection("interests")
       .onSnapshot(qss => {
         const interests = {}
-        qss.docs.forEach(doc => { interests[doc.id] = doc.data() })
+        qss.docs.forEach(doc => {
+          interests[doc.id] = doc.data()
+        })
         this.setState({ interests })
       }, err => console.log("Failed to get all interests: ", err))
 
-    firebase.firestore().doc("users/" + firebase.auth().currentUser.uid)
+    firebase.firestore()
+      .doc("users/" + firebase.auth().currentUser.uid)
       .onSnapshot(doc => {
         const userInterests = doc.get("interests") || {}
         this.setState({ userInterests })
@@ -32,44 +35,61 @@ export default class ProfileScreen extends React.Component {
   onPress = id => {
     console.log("Pressed: " + id)
 
-    firebase.firestore().doc("users/" + firebase.auth().currentUser.uid).set({
-      interests: {
-        [id]: !this.state.userInterests[id],
-      },
-    }, { merge: true })
+    firebase.firestore()
+      .doc("users/" + firebase.auth().currentUser.uid)
+      .set({
+        interests: {
+          [id]: !this.state.userInterests[id],
+        },
+      }, { merge: true })
   }
 
-  renderInterests = () => Object.keys(this.state.interests).map(id => {
-    const { uri, text } = this.state.interests[id]
-    const active = this.state.userInterests[id]
+  renderInterests = () => Object.keys(this.state.interests)
+    .map(id => {
+      const { uri, text } = this.state.interests[id]
+      const active = this.state.userInterests[id]
 
-    return <Interest key={id} id={id} uri={uri} text={text} active={active} onPress={this.onPress} />
-  })
+      return <Interest key={id} id={id} uri={uri} text={text} active={active} onPress={this.onPress}/>
+    })
 
   render() {
     return (
       <SafeAreaView style={styles.container}>
+
         <View style={styles.header}>
           <Text style={styles.nametop}>Nicolai Vatne</Text>
         </View>
-        <Image style={styles.hk} source={require("../../imgs/hk.png")} />
+
+        <Image style={styles.hk} source={require("../../imgs/hk.png")}/>
+
         <TouchableOpacity onPress={() => this.props.navigation.navigate("ProfileEdit")}>
-          <Image style={styles.settingsIcon} source={require("../../imgs/baseline_settings_white_18dp.png")} />
+          <Image style={styles.settingsIcon} source={require("../../imgs/baseline_settings_white_18dp.png")}/>
         </TouchableOpacity>
-        <Image style={styles.avatar} source={require("../../imgs/profileEdit.png")} />
+
+        <Image style={styles.avatar} source={require("../../imgs/profileEdit.png")}/>
+
         <View style={styles.body}>
-          <Text style={styles.eventor}>Events</Text>
-          <TouchableOpacity
-            onPress={() => this.props.navigation.navigate("ChatNav")}>
-            <Image source={require("../../imgs/eventProfile.png")} />
-          </TouchableOpacity>
           <Text style={styles.interesserText}>Interest</Text>
         </View>
+
         <ScrollView horizontal={true} style={{ height: 130 }}>
           <View style={styles.interestsContainer}>
             {this.renderInterests()}
           </View>
         </ScrollView>
+
+        /*
+        * Gjøre noe mer med dette, siden det ble så mange plasser hvor vi gjenbruker events.
+        * TODO
+        * */
+        <View style={styles.container}>
+          <Text> Name: Nicolai Vatne</Text>
+          <Text>Age: 23</Text>
+          <Text>Institution: Høyskolen Kristiania</Text>
+          <Text>Major: Computer Science</Text>
+          <Text>Favorite Interest: Running</Text>
+
+        </View>
       </SafeAreaView>
     )
   }
@@ -88,7 +108,10 @@ const styles = StyleSheet.create({
   header: {
     backgroundColor: "#108ba9",
     height: 250,
-    shadowOffset: { width: 5, height: 5 },
+    shadowOffset: {
+      width: 5,
+      height: 5,
+    },
     shadowColor: "grey",
     shadowOpacity: 1,
     shadowRadius: 10,
