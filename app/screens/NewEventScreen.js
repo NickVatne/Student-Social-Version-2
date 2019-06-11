@@ -13,6 +13,7 @@ export default class NewEventScreen extends React.Component {
 
     this.state = {
       title: "",
+      description: "",
       date: "",
       time: "",
       address: "",
@@ -25,7 +26,7 @@ export default class NewEventScreen extends React.Component {
     }
 
     navigateHome =  () => {
-      this.props.navigation.navigate("Event")
+      this.props.navigation.navigate("Home")
     }
 
     createEvent = () => {
@@ -34,6 +35,7 @@ export default class NewEventScreen extends React.Component {
 
       firebase.firestore().doc("events/" + newEventId).set({
         name: this.state.title,
+        description: this.state.description,
         date: this.state.date,
         time: this.state.time,
         address: this.state.address,
@@ -70,19 +72,28 @@ export default class NewEventScreen extends React.Component {
             <View style={styles.infoContainer}>
               <Text style={styles.optionsItemLeft}>Event name:</Text>
               <TextInput
-                placeholder="name your event"
+                placeholder="Name your event"
                 onChangeText={title => this.setState({ title })}
                 value={this.state.title}
               />
             </View>
             <View style={styles.infoContainer}>
+              <Text style={styles.optionsItemLeft}>Description:</Text>
+              <TextInput
+                  placeholder="Add a description for your event"
+                  multiline={true}
+                  onChangeText={description => this.setState({ description })}
+                  value={this.state.description}
+              />
+            </View>
+            <View style={styles.infoContainerDate}>
               <Text style={styles.optionsItemLeft}>Pick date:</Text>
               <DatePick mode="date"
                         onDateChange={date => this.setState({ date })}
                         value={this.state.date}
               />
             </View>
-            <View style={styles.infoContainer}>
+            <View style={styles.infoContainerDate}>
               <Text style={styles.optionsItemLeft}>Time:</Text>
               <TimePick onDateChange={time => this.setState({ time })}
                         value={this.state.time}
@@ -95,9 +106,6 @@ export default class NewEventScreen extends React.Component {
                 value={this.state.address}
                 placeholder={"The adress of your event"}
               />
-            </View>
-            <View style={styles.infoContainer}>
-              <Text style={styles.optionsItemLeft}>Color code: </Text>
             </View>
             <View style={styles.infoContainer}>
               <Text style={styles.optionsItemLeft}>Notification:</Text>
@@ -160,6 +168,15 @@ const styles = StyleSheet.create({
     alignItems: "center",
     height: 45,
     paddingRight: 20,
+    borderBottomColor: "grey",
+    borderBottomWidth: 1,
+  },
+  infoContainerDate: {
+    backgroundColor: "#FFF",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    height: 45,
     borderBottomColor: "grey",
     borderBottomWidth: 1,
   },

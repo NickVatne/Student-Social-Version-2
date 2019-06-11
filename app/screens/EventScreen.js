@@ -20,11 +20,11 @@ export default class EventScreen extends React.Component {
     super(props)
     this.state = {
       title: '',
+      description: '',
       date: '',
       time: '',
       address: '',
       notificationSwitchValue: '',
-      events: []
     }
   }
 
@@ -69,6 +69,10 @@ export default class EventScreen extends React.Component {
             <View style={styles.infoContainer}>
               <Text style={styles.optionsItemLeft}>Event name:</Text>
               <Text>{this.state.title}</Text>
+            </View>
+            <View style={styles.infoContainer}>
+              <Text style={styles.optionsItemLeft}>Description</Text>
+              <Text>{this.state.description}</Text>
             </View>
             <View style={styles.infoContainer}>
               <Text style={styles.optionsItemLeft}>Date:</Text>

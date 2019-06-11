@@ -1,6 +1,6 @@
 
 import React from "react"
-import { StyleSheet, SafeAreaView, TextInput, TouchableHighlight, Text, View } from "react-native"
+import { KeyboardAvoidingView, StyleSheet, SafeAreaView, TextInput, TouchableHighlight, Text, View } from "react-native"
 
 import firebase from "@modules/Firebase"
 
@@ -19,11 +19,11 @@ export default class Chat extends React.Component {
     const path = this.props.navigation.getParam("path")
 
     this.listener = firebase.firestore().collection(path)
-      .orderBy("timestamp", "desc")
-      .limit(20)
-      .onSnapshot(qss2 => {
-        this.setState({ messages: qss2.docs.reverse() })
-      })
+        .orderBy("timestamp", "desc")
+        .limit(20)
+        .onSnapshot(qss2 => {
+          this.setState({ messages: qss2.docs.reverse() })
+        })
   }
 
   componentWillUnmount = () => this.listener && this.listener()
@@ -47,25 +47,25 @@ export default class Chat extends React.Component {
 
   render() {
     return (
-      <SafeAreaView style={styles.container}>
-        <List data={this.getItems()} />
+        <SafeAreaView style={styles.container}>
+          <List data={this.getItems()} />
 
-        <View style={styles.inputContainer}>
-          <TextInput
-            placeholder="Message"
-            onChangeText={message => this.setState({ message })}
-            style={styles.input}
-          />
-          <TouchableHighlight
-            underlayColor="transparent"
-            onPress={this.send}
-          >
-            <View style={styles.submitContainer}>
-              <Text style={styles.submitText}>Send</Text>
-            </View>
-          </TouchableHighlight>
-        </View>
-      </SafeAreaView>
+          <View style={styles.inputContainer}>
+            <TextInput
+                placeholder="Message"
+                onChangeText={message => this.setState({ message })}
+                style={styles.input}
+            />
+            <TouchableHighlight
+                underlayColor="transparent"
+                onPress={this.send}
+            >
+              <View style={styles.submitContainer}>
+                <Text style={styles.submitText}>Send</Text>
+              </View>
+            </TouchableHighlight>
+          </View>
+        </SafeAreaView>
     )
   }
 }
@@ -74,13 +74,12 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-
   inputContainer: {
     flexDirection: "row",
+    height: 40,
   },
-
   input: {
-    flex: 1,
+    flex: 4,
     backgroundColor: "#F1F0F0",
     paddingLeft: 20,
     borderRadius: 10,
@@ -99,3 +98,5 @@ const styles = StyleSheet.create({
     fontSize: 24,
   },
 })
+
+
