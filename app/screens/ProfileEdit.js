@@ -99,8 +99,11 @@ export default class ProfileEdit extends React.Component {
 }
 
 const styles = StyleSheet.create({
+  container: {
+    backgroundColor: "#e7f4f6",
+  },
   middleHeader: {
-    backgroundColor: "#ecf1f4",
+    backgroundColor: "#d8e4e6",
     height: 50,
   },
   picture: {

@@ -77,6 +77,7 @@ export default class ProfileScreen extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
+    backgroundColor: "#e7f4f6",
   },
 
   interestsContainer: {
@@ -85,7 +86,7 @@ const styles = StyleSheet.create({
     // flexWrap: "wrap",
   },
   header: {
-    backgroundColor: "#2D4452",
+    backgroundColor: "#108ba9",
     height: 250,
     shadowOffset: { width: 5, height: 5 },
     shadowColor: "grey",
@@ -143,7 +144,7 @@ const styles = StyleSheet.create({
     width: 75,
     borderRadius: 30,
     color: "white",
-    backgroundColor: "#2D4452",
+    backgroundColor: "#108ba9",
   },
   interesserText: {
     fontSize: 22,

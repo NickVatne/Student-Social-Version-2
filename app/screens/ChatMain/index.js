@@ -41,5 +41,6 @@ export default class ChatMain extends React.Component {
 const styles = StyleSheet.create({
   container: {
     padding: 10,
+    backgroundColor: "#e7f4f6",
   },
 })

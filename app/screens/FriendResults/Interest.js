@@ -57,9 +57,9 @@ export default class InterestComponent extends React.Component {
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: "#2D4452",
         borderRadius: 20,
         marginBottom: 20,
+        backgroundColor: "#109aa9",
     },
 
     interestContainer: {

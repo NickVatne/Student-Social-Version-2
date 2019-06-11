@@ -27,6 +27,7 @@ const styles = StyleSheet.create({
     padding: 10,
     flexDirection: "row",
     alignItems: "center",
+    backgroundColor: "#e7f4f6",
   },
 
   image: {

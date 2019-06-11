@@ -70,7 +70,7 @@ export default function SchoolScreen(props) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#ecf1f4",
+    backgroundColor: "#e7f4f6",
   },
   hkStor: {
     width: 260,
@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
     borderRadius: 125,
     borderWidth: 7,
     marginTop: 20,
-    borderColor: "#2D4452",
+    borderColor: "#109aa9",
     alignSelf: "center",
     position: "absolute",
     backgroundColor: "white",
@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
     height: 90,
     borderRadius: 45,
     borderWidth: 4,
-    borderColor: "#2D4452",
+    borderColor: "#109aa9",
     alignSelf: "center",
     position: "absolute",
     backgroundColor: "white",

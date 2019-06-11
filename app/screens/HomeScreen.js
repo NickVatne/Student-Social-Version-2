@@ -63,7 +63,7 @@ export default class HomeScreen extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#ecf1f4",
+    backgroundColor: "#e7f4f6",
   },
 
   buttonContainer: {

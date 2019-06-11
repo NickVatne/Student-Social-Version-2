@@ -62,5 +62,7 @@ export default class FriendResults extends React.Component {
 const styles = StyleSheet.create({
   container: {
     padding: 10,
+    backgroundColor: "#e7f4f6",
+
   },
 })

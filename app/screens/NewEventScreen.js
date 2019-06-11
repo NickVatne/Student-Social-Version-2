@@ -127,12 +127,12 @@ export default class NewEventScreen extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#ecf1f4",
+    backgroundColor: "#e7f4f6",
     flex: 1,
   },
   header: {
     alignSelf: "stretch",
-    backgroundColor: "#2D4352",
+    backgroundColor: "#108ba9",
     alignItems: "center",
     justifyContent: "center",
     borderBottomWidth: 1,
@@ -179,7 +179,7 @@ const styles = StyleSheet.create({
   createEventButton: {
     width: "75%",
     height: 125,
-    backgroundColor: "#2D4352",
+    backgroundColor: "#109aa9",
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius:10,
