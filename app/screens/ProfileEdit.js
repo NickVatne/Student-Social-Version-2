@@ -41,10 +41,7 @@ export default class ProfileEdit extends React.Component {
               <View style={styles.middleHeader}>
                 <Text style={styles.generalText}>General</Text>
               </View>
-              <Text style={{ color: "#000000", marginLeft: 20, marginTop: 20, fontSize: 16, fontFamily: "Helvetica", }}>Find Group</Text>
-              <Text style={{ color: "#000000", marginLeft: 20, marginTop: 20, fontFamily: "Helvetica", }}>Size of find group</Text>
-              <Text style={{ color: "#2D4352", marginLeft: 280, marginTop: -18, fontFamily: "Helvetica", }}>minimum 1</Text>
-              <View style={{ backgroundColor: "#d8d8d8", height: 2, marginTop: 20 }} />
+
               <Text style={{ color: "#000000", marginLeft: 20, marginTop: 20, fontSize: 16, fontFamily: "Helvetica", }}>Interest</Text>
 
               <View style={styles.interesser}>
@@ -64,13 +61,6 @@ export default class ProfileEdit extends React.Component {
                   />
                 </TouchableOpacity>
               </View>
-
-              <Text style={{ color: "#000000", marginLeft: 20, marginTop: 20, fontFamily: "Helvetica", }}>Edit:</Text>
-              <Switch
-                style={{ transform: [{ scaleX: 0.5 }, { scaleY: 0.5 }], fontSize: 16, marginLeft: 50, marginTop: -24 }}
-                onValueChange={this.editSwitch}
-                value={this.state.editSwitchValue}
-              />
               <View style={styles.middleHeader}>
                 <Text style={styles.generalText}>Notification</Text>
               </View>
@@ -103,7 +93,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#e7f4f6",
   },
   middleHeader: {
-    backgroundColor: "#d8e4e6",
+    backgroundColor: "#e0edef",
     height: 50,
   },
   picture: {
