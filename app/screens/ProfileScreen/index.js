@@ -15,82 +15,95 @@ export default class ProfileScreen extends React.Component {
     console.log("User id: " + firebase.auth().currentUser.uid)
 
     firebase.firestore()
-      .collection("interests")
-      .onSnapshot(qss => {
-        const interests = {}
-        qss.docs.forEach(doc => {
-          interests[doc.id] = doc.data()
-        })
-        this.setState({ interests })
-      }, err => console.log("Failed to get all interests: ", err))
+        .collection("interests")
+        .onSnapshot(qss => {
+          const interests = {}
+          qss.docs.forEach(doc => {
+            interests[doc.id] = doc.data()
+          })
+          this.setState({ interests })
+        }, err => console.log("Failed to get all interests: ", err))
 
     firebase.firestore()
-      .doc("users/" + firebase.auth().currentUser.uid)
-      .onSnapshot(doc => {
-        const userInterests = doc.get("interests") || {}
-        this.setState({ userInterests })
-      })
+        .doc("users/" + firebase.auth().currentUser.uid)
+        .onSnapshot(doc => {
+          const userInterests = doc.get("interests") || {}
+          this.setState({ userInterests })
+        })
   }
 
   onPress = id => {
     console.log("Pressed: " + id)
 
     firebase.firestore()
-      .doc("users/" + firebase.auth().currentUser.uid)
-      .set({
-        interests: {
-          [id]: !this.state.userInterests[id],
-        },
-      }, { merge: true })
+        .doc("users/" + firebase.auth().currentUser.uid)
+        .set({
+          interests: {
+            [id]: !this.state.userInterests[id],
+          },
+        }, { merge: true })
   }
 
   renderInterests = () => Object.keys(this.state.interests)
-    .map(id => {
-      const { uri, text } = this.state.interests[id]
-      const active = this.state.userInterests[id]
+      .map(id => {
+        const { uri, text } = this.state.interests[id]
+        const active = this.state.userInterests[id]
 
-      return <Interest key={id} id={id} uri={uri} text={text} active={active} onPress={this.onPress}/>
-    })
+        return <Interest key={id} id={id} uri={uri} text={text} active={active} onPress={this.onPress}/>
+      })
 
   render() {
     return (
-      <SafeAreaView style={styles.container}>
+        <SafeAreaView style={styles.container}>
 
-        <View style={styles.header}>
-          <Text style={styles.nametop}>Nicolai Vatne</Text>
-        </View>
-
-        <Image style={styles.hk} source={require("../../imgs/hk.png")}/>
-
-        <TouchableOpacity onPress={() => this.props.navigation.navigate("ProfileEdit")}>
-          <Image style={styles.settingsIcon} source={require("../../imgs/baseline_settings_white_18dp.png")}/>
-        </TouchableOpacity>
-
-        <Image style={styles.avatar} source={require("../../imgs/profileEdit.png")}/>
-
-        <View style={styles.body}>
-          <Text style={styles.interesserText}>Interest</Text>
-        </View>
-
-        <ScrollView horizontal={true} style={{ height: 130 }}>
-          <View style={styles.interestsContainer}>
-            {this.renderInterests()}
+          <View style={styles.header}>
+            <Text style={styles.nametop}>Nicolai Vatne</Text>
           </View>
-        </ScrollView>
 
-        /*
-        * Gjøre noe mer med dette, siden det ble så mange plasser hvor vi gjenbruker events.
-        * TODO
-        * */
-        <View style={styles.container}>
-          <Text> Name: Nicolai Vatne</Text>
-          <Text>Age: 23</Text>
-          <Text>Institution: Høyskolen Kristiania</Text>
-          <Text>Major: Computer Science</Text>
-          <Text>Favorite Interest: Running</Text>
+          <Image style={styles.hk} source={require("../../imgs/hk.png")}/>
 
-        </View>
-      </SafeAreaView>
+          <TouchableOpacity onPress={() => this.props.navigation.navigate("ProfileEdit")}>
+            <Image style={styles.settingsIcon} source={require("../../imgs/baseline_settings_white_18dp.png")}/>
+          </TouchableOpacity>
+
+          <Image style={styles.avatar} source={require("../../imgs/profileEdit.png")}/>
+
+          <View style={styles.body}>
+            <Text style={styles.interesserText}>Interests</Text>
+          </View>
+
+          <ScrollView horizontal={true} style={{ height: 130 }}>
+            <View style={styles.interestsContainer}>
+              {this.renderInterests()}
+            </View>
+          </ScrollView>
+
+          <View>
+            <Text style={styles.aboutText}>About Nicolai</Text>
+          </View>
+          <View style={styles.informationAreaContainer}>
+            <View style={styles.infoContainer}>
+              <Text style={styles.optionsItemLeft}>Name:</Text>
+              <Text>Nicolai Vatne</Text>
+            </View>
+            <View style={styles.infoContainer}>
+              <Text style={styles.optionsItemLeft}>Age:</Text>
+              <Text>23</Text>
+            </View>
+            <View style={styles.infoContainer}>
+              <Text style={styles.optionsItemLeft}>Institution:</Text>
+              <Text>Høyskolen Kristiania</Text>
+            </View>
+            <View style={styles.infoContainer}>
+              <Text style={styles.optionsItemLeft}>Major: </Text>
+              <Text>Computer Science</Text>
+            </View>
+            <View style={styles.infoContainer}>
+              <Text style={styles.optionsItemLeft}>Favorite Interest:</Text>
+              <Text>Running</Text>
+            </View>
+          </View>
+        </SafeAreaView>
     )
   }
 }
@@ -98,8 +111,44 @@ export default class ProfileScreen extends React.Component {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: "#e7f4f6",
+
+  },
+  informationAreaContainer: {
+    backgroundColor: "#ecf1f4",
+    flex: 5,
+  },
+  infoContainer: {
+    flexDirection: "row",
+    backgroundColor: "#FFF",
+    justifyContent: "space-between",
+    alignItems: "center",
+    height: 45,
+    paddingRight: 20,
+    borderBottomColor: "grey",
+    borderBottomWidth: 1,
+  },
+  optionsItemLeft: {
+    marginLeft: 5,
+    fontFamily: "Helvetica",
+
+  },
+  optionsItemRight: {
+    marginRight: 5,
+    fontFamily: "Helvetica",
   },
 
+  profileInfo: {
+    backgroundColor: "#e7f4f6",
+    marginTop: 20,
+    marginLeft: 10,
+  },
+  aboutText: {
+    fontSize: 20,
+    fontFamily: "Helvetica",
+    alignSelf: "center",
+    marginBottom: 20,
+    marginTop: 20,
+  },
   interestsContainer: {
     justifyContent: "center",
     flexDirection: "row",

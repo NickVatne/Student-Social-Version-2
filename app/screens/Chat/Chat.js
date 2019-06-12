@@ -86,8 +86,9 @@ const styles = StyleSheet.create({
   },
 
   submitContainer: {
-    height: 50,
     width: 100,
+    height: 40,
+    marginRight: 2,
     backgroundColor: "#0099FF",
     justifyContent: "center",
     borderRadius: 60,

@@ -14,7 +14,7 @@ export default class NewEventScreen extends React.Component {
     this.state = {
       title: "",
       description: "",
-      date: "",
+      date: "01-01-2019",
       time: "",
       address: "",
       notificationSwitchValue: false,
@@ -25,7 +25,15 @@ export default class NewEventScreen extends React.Component {
       this.setState({ notificationSwitchValue: value })
     }
 
-    navigateHome =  () => {
+    navigateHomeAndClear =  () => {
+      this.setState( {
+        title: "",
+        description: "",
+        date: "01-01-2019",
+        time: "20:00",
+        address: "",
+        notificationSwitchValue: false
+      })
       this.props.navigation.navigate("Home")
     }
 
@@ -49,7 +57,7 @@ export default class NewEventScreen extends React.Component {
           'Event Created!',
           '',
           [
-            {text: 'OK', onPress: this.navigateHome},
+            {text: 'OK', onPress: this.navigateHomeAndClear},
           ],
       );
 

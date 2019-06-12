@@ -65,7 +65,6 @@ export default class EventScreen extends React.Component {
             <Text style={styles.headerText}>{this.state.title}</Text>
           </View>
           <View style={styles.informationAreaContainer}>
-
             <View style={styles.infoContainer}>
               <Text style={styles.optionsItemLeft}>Event name:</Text>
               <Text>{this.state.title}</Text>
