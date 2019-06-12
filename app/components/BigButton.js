@@ -29,8 +29,8 @@ const styles = StyleSheet.create({
     shadowRadius: 1,
   },
   text: {
-    color: "#2D4352",
-    fontSize: 22,
+    color: "#FFFFFF",
+    fontSize: 26,
     fontWeight: "bold",
   },
 })
