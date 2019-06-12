@@ -10,8 +10,8 @@ export default ({ doc, onPress }) => (
     <View style={styles.container}>
       <View style={styles.textContainer}>
         <Text style={styles.header}>{doc.get("name")}</Text>
-        <Text>Participants: </Text>
-        <Text>{(doc.get("participants") || []).join(", ")}</Text>
+        <Text>Description: </Text>
+        <Text>{(doc.get("description"))}</Text>
       </View>
       <View style={styles.imageContainer}>
         <Image

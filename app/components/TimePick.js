@@ -5,7 +5,9 @@ import DatePicker from "react-native-datepicker"
 export default class DatePick extends Component {
   constructor(props) {
     super(props)
-    this.state = { time: "20:00" }
+    this.state = {
+      time: new Date(),
+    }
   }
 
   render() {
@@ -15,13 +17,16 @@ export default class DatePick extends Component {
         <DatePicker
           style={{ width: 200 }}
           date={this.state.time}
-          mode="time"
+          mode="datetime"
           format="HH:mm"
           showIcon={false}
           confirmBtnText="Confirm"
           cancelBtnText="Cancel"
 
-          onDateChange={(time) => { this.props.onDateChange && this.props.onDateChange(time);this.setState({ time }); }}
+          onDateChange={(time) => {
+            this.props.onDateChange && this.props.onDateChange(time)
+            this.setState({ time })
+          }}
         />
 
       </View>

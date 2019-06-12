@@ -1,144 +1,141 @@
 import React from "react"
-import {StyleSheet, Text, View, TextInput, Switch, TouchableOpacity, Alert} from "react-native"
-
+import { StyleSheet, Text, View, TextInput, Switch, TouchableOpacity, Alert } from "react-native"
 import firebase from "@modules/Firebase"
-
 import DatePick from "../components/DatePick"
 import TimePick from "../components/TimePick"
 
 
 export default class NewEventScreen extends React.Component {
+
   constructor(props) {
     super(props)
 
     this.state = {
       title: "",
       description: "",
-      date: "01-01-2019",
+      date: new Date().toLocaleString(),
       time: "",
       address: "",
       notificationSwitchValue: false,
     }
   }
 
-    toggleSwitch = value => {
-      this.setState({ notificationSwitchValue: value })
-    }
+  toggleSwitch = value => {
+    this.setState({ notificationSwitchValue: value })
+  }
 
-    navigateHomeAndClear =  () => {
-      this.setState( {
-        title: "",
-        description: "",
-        date: "01-01-2019",
-        time: "20:00",
-        address: "",
-        notificationSwitchValue: false
-      })
-      this.props.navigation.navigate("Home")
-    }
+  navigateHomeAndClear = () => {
+    this.setState({
+      title: "",
+      description: "",
+      date: "01-01-2019",
+      time: "20:00",
+      address: "",
+      notificationSwitchValue: false,
+    })
+    this.props.navigation.navigate("Home")
+  }
 
-    createEvent = () => {
-      const newEventId = firebase.firestore().collection("events").doc().id;
-      //this.props.navigation.navigate("Event");
+  createEvent = () => {
+    const newEventId = firebase.firestore()
+      .collection("events")
+      .doc().id
 
-      firebase.firestore().doc("events/" + newEventId).set({
+    firebase.firestore()
+      .doc("events/" + newEventId)
+      .set({
         name: this.state.title,
         description: this.state.description,
         date: this.state.date,
         time: this.state.time,
         address: this.state.address,
         notifications: this.state.notificationSwitchValue,
-       // picture: "https://www.shutterfly.com/ideas/wp-content/uploads/2016/08/50-happy-birthday-quotes-thumb.jpg",
         participants: ["You, Michael, Nora, Nicolai"],
-        isPublic: true
+        isPublic: true,
       })
 
-      Alert.alert(
-          'Event Created!',
-          '',
-          [
-            {text: 'OK', onPress: this.navigateHomeAndClear},
-          ],
-      );
-
-
-    //   firebase.firestore().doc("events/" + newEventId).add({
-    //     text: "Event created",
-    //     uid: "exampleID",
-    //     timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-    //   })
+    Alert.alert(
+      "Event Created!",
+      "",
+      [
+        {
+          text: "OK",
+          onPress: this.navigateHomeAndClear,
+        },
+      ],
+    )
   }
 
-    render() {
-      return (
-        <View style={styles.container}>
-          <View style={styles.header}>
-            <Text style={styles.headerText}>{this.state.title}</Text>
-          </View>
-          <View style={styles.informationAreaContainer}>
-
-            <View style={styles.infoContainer}>
-              <Text style={styles.optionsItemLeft}>Event name:</Text>
-              <TextInput
-                placeholder="Name your event"
-                onChangeText={title => this.setState({ title })}
-                value={this.state.title}
-              />
-            </View>
-            <View style={styles.infoContainer}>
-              <Text style={styles.optionsItemLeft}>Description:</Text>
-              <TextInput
-                  placeholder="Add a description for your event"
-                  multiline={true}
-                  onChangeText={description => this.setState({ description })}
-                  value={this.state.description}
-              />
-            </View>
-            <View style={styles.infoContainerDate}>
-              <Text style={styles.optionsItemLeft}>Pick date:</Text>
-              <DatePick mode="date"
-                        onDateChange={date => this.setState({ date })}
-                        value={this.state.date}
-              />
-            </View>
-            <View style={styles.infoContainerDate}>
-              <Text style={styles.optionsItemLeft}>Time:</Text>
-              <TimePick onDateChange={time => this.setState({ time })}
-                        value={this.state.time}
-              />
-            </View>
-            <View style={styles.infoContainer}>
-              <Text style={styles.optionsItemLeft}>Address:</Text>
-              <TextInput
-                onChangeText={address => this.setState({ address })}
-                value={this.state.address}
-                placeholder={"The adress of your event"}
-              />
-            </View>
-            <View style={styles.infoContainer}>
-              <Text style={styles.optionsItemLeft}>Notification:</Text>
-              <Switch
-                style={styles.optionsItemRight}
-                onValueChange={this.toggleSwitch}
-                value={this.state.notificationSwitchValue}
-              />
-            </View>
-            <View style={styles.infoContainer}>
-              <Text style={styles.optionsItemLeft}>Invite participants</Text>
-            </View>
-            <View style={styles.buttonArea}>
-              <TouchableOpacity
-                  onPress={this.createEvent}
-                  style={styles.createEventButton}
-              >
-                <Text style={styles.buttonText}> Create Event! </Text>
-              </TouchableOpacity>
-            </View>
-          </View>
-
+  render() {
+    return (
+      <View style={styles.container}>
+        <View style={styles.header}>
+          <Text style={styles.headerText}>{this.state.title}</Text>
         </View>
-      )
-    }
+        <View style={styles.informationAreaContainer}>
+
+          <View style={styles.infoContainer}>
+            <Text style={styles.optionsItemLeft}>Event name:</Text>
+            <TextInput
+              placeholder="Name your event"
+              onChangeText={title => this.setState({ title })}
+              value={this.state.title}
+            />
+          </View>
+          <View style={styles.infoContainer}>
+            <Text style={styles.optionsItemLeft}>Description:</Text>
+            <TextInput
+              placeholder="Add a description for your event"
+              multiline={true}
+              onChangeText={description => this.setState({ description })}
+              value={this.state.description}
+            />
+          </View>
+          <View style={styles.infoContainerDate}>
+            <Text style={styles.optionsItemLeft}>Pick date:</Text>
+            <DatePick mode="date"
+                      onDateChange={date => this.setState({ date })}
+                      value={this.state.date}
+            />
+          </View>
+          <View style={styles.infoContainerDate}>
+            <Text style={styles.optionsItemLeft}>Time:</Text>
+            <TimePick onDateChange={time => this.setState({ time })}
+                      value={this.state.time}
+            />
+          </View>
+          <View style={styles.infoContainer}>
+            <Text style={styles.optionsItemLeft}>Address:</Text>
+            <TextInput
+              onChangeText={address => this.setState({ address })}
+              value={this.state.address}
+              placeholder={"The adress of your event"}
+            />
+          </View>
+          <View style={styles.infoContainer}>
+            <Text style={styles.optionsItemLeft}>Notification:</Text>
+            <Switch
+              style={styles.optionsItemRight}
+              onValueChange={this.toggleSwitch}
+              value={this.state.notificationSwitchValue}
+            />
+          </View>
+          <View style={styles.infoContainer}>
+            <Text style={styles.optionsItemLeft}>Invite participants</Text>
+          </View>
+          <View style={styles.buttonArea}>
+            <TouchableOpacity
+              onPress={this.createEvent}
+              style={styles.createEventButton}
+            >
+              <Text style={styles.buttonText}> Create Event! </Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+
+      </View>
+    )
+  }
 }
 
 const styles = StyleSheet.create({
@@ -198,20 +195,20 @@ const styles = StyleSheet.create({
   },
   buttonArea: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center'
+    alignItems: "center",
+    justifyContent: "center",
   },
   createEventButton: {
     width: "75%",
     height: 125,
     backgroundColor: "#109aa9",
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderRadius:10,
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: 10,
   },
   buttonText: {
     color: "white",
     fontSize: 20,
     fontFamily: "Helvetica",
-  }
+  },
 })
