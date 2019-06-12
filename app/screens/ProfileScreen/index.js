@@ -102,6 +102,8 @@ export default class ProfileScreen extends React.Component {
               <Text style={styles.optionsItemLeft}>Favorite Interest:</Text>
               <Text>Running</Text>
             </View>
+            <View style={styles.infoContainer}>
+            </View>
           </View>
         </SafeAreaView>
     )
@@ -114,12 +116,12 @@ const styles = StyleSheet.create({
 
   },
   informationAreaContainer: {
-    backgroundColor: "#ecf1f4",
+    backgroundColor: "#e7f4f6",
     flex: 5,
   },
   infoContainer: {
     flexDirection: "row",
-    backgroundColor: "#FFF",
+    backgroundColor: "#e7f4f6",
     justifyContent: "space-between",
     alignItems: "center",
     height: 45,
