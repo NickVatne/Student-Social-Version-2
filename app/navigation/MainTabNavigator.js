@@ -30,12 +30,7 @@ const HomeStack = createStackNavigator({
       title: "Results",
     },
   },
-  SchoolPicker: {
-    screen: SchoolPicker,
-    navigationOptions: {
-      title: "Browse",
-    },
-  },
+
 
   // Chat screen on the home tab
   HomeChat: {
@@ -110,6 +105,12 @@ const SchoolStack = createStackNavigator({
     screen: SchoolScreen,
     navigationOptions: {
       title: "School",
+    },
+  },
+  SchoolPicker: {
+    screen: SchoolPicker,
+    navigationOptions: {
+      title: "Browse",
     },
   },
 }, { navigationOptions: {

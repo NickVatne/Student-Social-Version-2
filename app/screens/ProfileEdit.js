@@ -26,7 +26,7 @@ export default class ProfileEdit extends React.Component {
       return (
         <SafeAreaView style={styles.container}>
 
-          <ScrollView style={{ height: 610 }}>
+          <ScrollView style={{ height: 730 }}>
             <Image
               style={styles.picture}
               source={require("../imgs/profileEdit.png")}
