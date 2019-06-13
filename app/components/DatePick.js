@@ -5,7 +5,9 @@ import DatePicker from "react-native-datepicker"
 export default class DatePick extends Component {
   constructor(props) {
     super(props)
-    this.state = { date: "15-05-2018" }
+    this.state = {
+      date: new Date().toLocaleString(),
+    }
   }
 
   render() {
@@ -22,7 +24,10 @@ export default class DatePick extends Component {
           confirmBtnText="Confirm"
           cancelBtnText="Cancel"
 
-          onDateChange={(date) => { this.props.onDateChange && this.props.onDateChange(date);this.setState({ date }); }}
+          onDateChange={(date) => {
+            this.props.onDateChange && this.props.onDateChange(date)
+            this.setState({ date })
+          }}
         />
 
       </View>
