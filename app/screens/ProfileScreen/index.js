@@ -70,6 +70,7 @@ export default class ProfileScreen extends React.Component {
 
           <View style={styles.body}>
             <Text style={styles.interesserText}>Interests</Text>
+            <Text style={styles.descriptionText}>Green = on   Black = off</Text>
           </View>
 
           <ScrollView horizontal={true} style={{ height: 130 }}>
@@ -80,7 +81,9 @@ export default class ProfileScreen extends React.Component {
 
           <View>
             <Text style={styles.aboutText}>About Nicolai</Text>
+
           </View>
+          <ScrollView>
           <View style={styles.informationAreaContainer}>
             <View style={styles.infoContainer}>
               <Text style={styles.optionsItemLeft}>Name:</Text>
@@ -105,6 +108,7 @@ export default class ProfileScreen extends React.Component {
             <View style={styles.infoContainer}>
             </View>
           </View>
+        </ScrollView>
         </SafeAreaView>
     )
   }
@@ -151,7 +155,13 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     marginTop: 20,
   },
+  descriptionText: {
+    fontSize: 10,
+    fontFamily: "Helvetica",
+    alignSelf: "center",
+  },
   interestsContainer: {
+    marginTop: 5,
     justifyContent: "center",
     flexDirection: "row",
     // flexWrap: "wrap",
