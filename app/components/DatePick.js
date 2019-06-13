@@ -6,7 +6,7 @@ export default class DatePick extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      date: new Date().toLocaleString(),
+      date: new Date(),
     }
   }
 

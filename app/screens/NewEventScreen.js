@@ -13,7 +13,7 @@ export default class NewEventScreen extends React.Component {
     this.state = {
       title: "",
       description: "",
-      date: new Date().toLocaleString(),
+      date: "",
       time: "",
       address: "",
       notificationSwitchValue: false,
@@ -28,8 +28,8 @@ export default class NewEventScreen extends React.Component {
     this.setState({
       title: "",
       description: "",
-      date: "01-01-2019",
-      time: "20:00",
+      date: new Date(),
+      time: new Date(),
       address: "",
       notificationSwitchValue: false,
     })

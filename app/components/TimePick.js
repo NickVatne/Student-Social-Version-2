@@ -17,7 +17,7 @@ export default class DatePick extends Component {
         <DatePicker
           style={{ width: 200 }}
           date={this.state.time}
-          mode="datetime"
+          mode="time"
           format="HH:mm"
           showIcon={false}
           confirmBtnText="Confirm"
