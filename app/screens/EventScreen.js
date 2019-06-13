@@ -9,8 +9,8 @@ import TimePick from "../components/TimePick"
 import Room from "./ChatMain/Room"
 
 import NewEventScreen from "./NewEventScreen"
-import MyMessage from "./Chat/MyMessage";
-import TheirMessage from "./Chat/TheirMessage";
+import MyMessage from "./Chat/MyMessage"
+import TheirMessage from "./Chat/TheirMessage"
 
 
 

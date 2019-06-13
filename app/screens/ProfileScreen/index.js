@@ -5,6 +5,8 @@ import firebase from "@modules/Firebase"
 
 import Interest from "../../components/Interest"
 
+const ProfilePic = require("../../imgs/nicolai.png")
+
 export default class ProfileScreen extends React.Component {
   state = {
     interests: {},
@@ -15,75 +17,75 @@ export default class ProfileScreen extends React.Component {
     console.log("User id: " + firebase.auth().currentUser.uid)
 
     firebase.firestore()
-        .collection("interests")
-        .onSnapshot(qss => {
-          const interests = {}
-          qss.docs.forEach(doc => {
-            interests[doc.id] = doc.data()
-          })
-          this.setState({ interests })
-        }, err => console.log("Failed to get all interests: ", err))
+      .collection("interests")
+      .onSnapshot(qss => {
+        const interests = {}
+        qss.docs.forEach(doc => {
+          interests[doc.id] = doc.data()
+        })
+        this.setState({ interests })
+      }, err => console.log("Failed to get all interests: ", err))
 
     firebase.firestore()
-        .doc("users/" + firebase.auth().currentUser.uid)
-        .onSnapshot(doc => {
-          const userInterests = doc.get("interests") || {}
-          this.setState({ userInterests })
-        })
+      .doc("users/" + firebase.auth().currentUser.uid)
+      .onSnapshot(doc => {
+        const userInterests = doc.get("interests") || {}
+        this.setState({ userInterests })
+      })
   }
 
   onPress = id => {
     console.log("Pressed: " + id)
 
     firebase.firestore()
-        .doc("users/" + firebase.auth().currentUser.uid)
-        .set({
-          interests: {
-            [id]: !this.state.userInterests[id],
-          },
-        }, { merge: true })
+      .doc("users/" + firebase.auth().currentUser.uid)
+      .set({
+        interests: {
+          [id]: !this.state.userInterests[id],
+        },
+      }, { merge: true })
   }
 
   renderInterests = () => Object.keys(this.state.interests)
-      .map(id => {
-        const { uri, text } = this.state.interests[id]
-        const active = this.state.userInterests[id]
+    .map(id => {
+      const { uri, text } = this.state.interests[id]
+      const active = this.state.userInterests[id]
 
-        return <Interest key={id} id={id} uri={uri} text={text} active={active} onPress={this.onPress}/>
-      })
+      return <Interest key={id} id={id} uri={uri} text={text} active={active} onPress={this.onPress}/>
+    })
 
   render() {
     return (
-        <SafeAreaView style={styles.container}>
+      <SafeAreaView style={styles.container}>
 
-          <View style={styles.header}>
-            <Text style={styles.nametop}>Nicolai Vatne</Text>
+        <View style={styles.header}>
+          <Text style={styles.nametop}>Nicolai Vatne</Text>
+        </View>
+
+        <Image style={styles.hk} source={require("../../imgs/hk.png")}/>
+
+        <TouchableOpacity onPress={() => this.props.navigation.navigate("ProfileEdit")}>
+          <Image style={styles.settingsIcon} source={require("../../imgs/baseline_settings_white_18dp.png")}/>
+        </TouchableOpacity>
+
+        <Image style={styles.avatar} source={ProfilePic} />
+
+        <View style={styles.body}>
+          <Text style={styles.interesserText}>Interests</Text>
+          <Text style={styles.descriptionText}>Green = on Black = off</Text>
+        </View>
+
+        <ScrollView horizontal={true} style={{ height: 130 }}>
+          <View style={styles.interestsContainer}>
+            {this.renderInterests()}
           </View>
+        </ScrollView>
 
-          <Image style={styles.hk} source={require("../../imgs/hk.png")}/>
+        <View>
+          <Text style={styles.aboutText}>About Nicolai</Text>
 
-          <TouchableOpacity onPress={() => this.props.navigation.navigate("ProfileEdit")}>
-            <Image style={styles.settingsIcon} source={require("../../imgs/baseline_settings_white_18dp.png")}/>
-          </TouchableOpacity>
-
-          <Image style={styles.avatar} source={require("../../imgs/profileEdit.png")}/>
-
-          <View style={styles.body}>
-            <Text style={styles.interesserText}>Interests</Text>
-            <Text style={styles.descriptionText}>Green = on   Black = off</Text>
-          </View>
-
-          <ScrollView horizontal={true} style={{ height: 130 }}>
-            <View style={styles.interestsContainer}>
-              {this.renderInterests()}
-            </View>
-          </ScrollView>
-
-          <View>
-            <Text style={styles.aboutText}>About Nicolai</Text>
-
-          </View>
-          <ScrollView>
+        </View>
+        <ScrollView>
           <View style={styles.informationAreaContainer}>
             <View style={styles.infoContainer}>
               <Text style={styles.optionsItemLeft}>Name:</Text>
@@ -109,7 +111,7 @@ export default class ProfileScreen extends React.Component {
             </View>
           </View>
         </ScrollView>
-        </SafeAreaView>
+      </SafeAreaView>
     )
   }
 }
@@ -159,6 +161,7 @@ const styles = StyleSheet.create({
     fontSize: 10,
     fontFamily: "Helvetica",
     alignSelf: "center",
+    padding: 1.87,
   },
   interestsContainer: {
     marginTop: 5,
