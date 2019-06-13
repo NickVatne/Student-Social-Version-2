@@ -89,7 +89,7 @@ const ChatStack = createStackNavigator({
   },
 }, {
   navigationOptions: {
-    tabBarLabel: "Chat",
+    tabBarLabel: "Events",
     tabBarIcon: ({ focused }) => (
       <TabBarIcon
         focused={focused}
