@@ -33,7 +33,7 @@ export default class Login extends Component {
     return (
       <SafeAreaView style={styles.container}>
         <View style={styles.content}>
-          <Image source={BANNER} style={styles.logoImage}/>
+          <Image source={BANNER} style={styles.logoImage} />
           <Text style={styles.logo}>Student.Social</Text>
 
 
