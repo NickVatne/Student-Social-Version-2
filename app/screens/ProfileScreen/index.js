@@ -72,7 +72,7 @@ export default class ProfileScreen extends React.Component {
 
         <View style={styles.body}>
           <Text style={styles.interesserText}>Interests</Text>
-          <Text style={styles.descriptionText}>Green = on Black = off</Text>
+          <Text style={styles.descriptionText}>Blue = on Black = off</Text>
         </View>
 
         <ScrollView horizontal={true} style={{ height: 130 }}>
