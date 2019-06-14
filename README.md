@@ -1,8 +1,13 @@
-# Student-Social-Version-2
-Updated Version of the project
+# Student-Social 
+Forhåndskrav:
+
+NPM - Kan lastes ned gjennom f.eks. Homebrew
+NODE - https://nodejs.org/en/download/
+REACT - Lastet ned gjennom f.eks. Homebrew
+XCODE - XCode kan lastes ned gjennom Apple App Store
 
 
-## RunTIME instruksjoner
+## Kjøreinstruksjoner instruksjoner
 
 1. Kjør "NPM i"
 2. Kjør "NPM Run Start"
@@ -12,9 +17,9 @@ Updated Version of the project
 
 # Known Bugs
 
-- Implementer en ny profilside fordi den forrige var litt for scuffed for å bruke videre, for mye bilder og greier.
-- Finn ut hva som ønskes å gjøre med create event, fordi akuratt nå spiller den ikke noe rolle.
-- OTHER THAN THAT, WE DID IT.
-
+- Keyboard bug når du ønsker å skrive noe i chatten (jobber med fix)
+- Videre implementere mer funksjonalitet om å mathce brukere, og events
+- Realitivt svak UI
+- Svak arrangment funksjon som kun returnerer arrangment veldig simpelt.
 
 
